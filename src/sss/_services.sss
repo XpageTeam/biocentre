@@ -1,0 +1,207 @@
+.services
+	&-cont 
+		padding: 95px 0 110px
+
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 0 0 -30px -30px
+
+	&__item 
+		width: calc((100% - 30px * 4) / 4)
+		margin: 0 0 30px 30px
+		display: flex
+		flex-direction: column
+		cursor: pointer
+
+		&-info
+			background: var(--main-color)
+			color: #fff
+			font-size: rem(18)
+			font-weight: bold
+			padding: 30px 40px
+			flex: 1 1 auto
+			display: flex
+			flex-direction: column
+
+	&-info
+		&__text
+			margin-bottom: 35px
+
+	&-btn
+		position: relative
+		size: 40px
+		border-radius: 50%
+		background: #fff
+		margin-top: auto
+
+		&:before 
+			content: ''
+			position: absolute
+			top: calc(50% - 3px)
+			left: calc(50% - 3px)
+			size: 6px
+			display: block
+			border-top: 1px solid var(--main-color)
+			border-right: 1px solid var(--main-color)
+			transform: rotate(45deg)
+		
+
+	&__content
+		margin-top: 75px
+		opacity: 0
+		transform: translateY(20%)
+		transition: opacity .4s ease, transform .6s ease
+		transition-delay: .4s
+
+		&-wr
+			display: flex
+			margin-top: 50px
+			align-items: flex-start
+
+
+		&-title
+			font-size: rem(24)
+			font-weight: bold
+
+
+	&-slider
+		position: relative
+		width: 457px
+		flex: none
+		margin: 0 23px
+
+		.swiper
+			&-button
+				&-prev
+					left: -23px
+				&-next
+					right: -23px
+
+	&-info
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		margin-left: 50px
+
+	&-title 
+		margin-bottom: 40px
+
+	&__price
+		padding: 20px 25px
+		border-radius: 5px
+		background: var(--main-color)
+		color: #fff
+		font-weight: bold
+		font-size: rem(25)
+		line-height: 1
+		margin-bottom: 50px
+
+		&-label
+			font-size: rem(14)
+			color: #b2b5bd
+			margin-bottom: 15px
+	
+	.tabs-content.active
+		.services__content
+			opacity: 1
+			transform: translateY(0)
+
+@media screen and (max-width: 1500px)
+	.services-cont
+		padding: 60px 0 70px
+
+@media screen and (max-width: 1400px)
+
+	.services
+		&-title
+			margin-bottom: 20px
+
+		&__item-info
+			padding: 25px
+
+		&-info__text
+			margin-bottom: 20px
+
+
+@media screen and (max-width: 1200px)
+	
+	.services
+		&__item
+			width: calc((100% - 20px * 4) / 4)
+			margin: 0 0 30px 20px
+
+			&-info
+				padding: 20px
+				font-size: 1rem
+
+			&__text
+				margin-bottom: 10px
+
+		&__content
+			margin-top: 35px
+
+			&-wr
+				margin-top: 25px
+
+		&-slider
+			position: sticky
+			top: 100px
+
+		&-info
+			margin-left: 30px
+
+		&__price
+			padding: 12px 18px
+			margin-bottom: 30px
+
+
+@media screen and (max-width: 1000px)
+	.services
+		&-cont
+			padding: 30px 0
+
+		&__item
+			width: calc((100% - 20px * 2) / 2)
+			margin: 0 0 30px 20px
+
+			&-slider
+				img
+					width: 100%
+
+		&__content-wr
+			flex-direction: column
+
+		&-slider
+			margin: 0 auto 30px
+			position: relative
+			top: 0
+
+		&-info
+			margin-left: 0
+
+		&__price
+			font-size: 1.2rem
+
+@media screen and (max-width: 660px)
+	
+	.services
+		&__list
+			margin: 0 0 -30px 0
+
+		&__item
+			width: 100%
+			margin: 0 0 30px 0
+
+		&__content-title
+			font-size: 1.4rem
+
+		&-slider
+			top: 0
+			width: 100%
+
+			.swiper-button
+				&-prev
+					left: 0px
+				&-next
+					right: 0
