@@ -1,6 +1,3 @@
-#service, #quality
-	width: 1000px
-
 .popup-form
 	display: none
 	border: 1px solid var(--borderColor)
@@ -53,6 +50,24 @@
 
 						&-message
 							color: rgba(#000, .5)
+
+.wr-block
+	display: flex 
+	flex-wrap: wrap
+	margin: 0 0 -30px -30px
+
+	&:not(:first-child)
+		margin-top: 30px
+
+	.title-block
+		width: 100%
+		margin-bottom: 20px
+		font-size: rem(18)
+		text-align: center
+
+	.forms__input-cont
+		width: calc((100% - 30px * 2) / 2)
+		margin: 0 0 30px 30px
 
 .checkbox
 	position: relative
@@ -143,6 +158,7 @@
 		font-size: 15px
 
 .forms
+	max-height: calc(100vh - 100px)
 
 	&__submit
 		text-align: center
@@ -276,6 +292,7 @@
 			flex-direction: column-reverse
 			position: relative
 			justify-content: flex-end
+
 
 			&--file
 				flex-wrap: wrap
