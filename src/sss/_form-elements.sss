@@ -1,8 +1,8 @@
 .popup-form
 	display: none
-	border: 1px solid var(--borderColor)
+	border: 1px solid var(--border-color)
 	padding: 55px 65px 70px !important
-	width: 655px
+	width: 920px
 
 	&__title
 		font-size: 30px
@@ -35,7 +35,7 @@
 				border: none
 				background: none
 				padding: 0 0 2px
-				color: var(--mainColor)
+				color: var(--main-color)
 
 				&:after
 					display: none
@@ -57,17 +57,25 @@
 	margin: 0 0 -30px -30px
 
 	&:not(:first-child)
-		margin-top: 30px
+		margin-top: 40px
 
 	.title-block
 		width: 100%
 		margin-bottom: 20px
-		font-size: rem(18)
+		font-size: rem(22)
 		text-align: center
+		text-align: left
+		font-weight: bold
 
 	.forms__input-cont
 		width: calc((100% - 30px * 2) / 2)
 		margin: 0 0 30px 30px
+
+	.title-block, .subtitle
+		margin-left: 30px
+
+	.subtitle
+		margin-bottom: 30px
 
 .checkbox
 	position: relative
@@ -104,7 +112,7 @@
 			size: 32px
 
 		&:after
-			border: 2px solid var(--mainColor)
+			border: 2px solid var(--main-color)
 			border-top: none
 			border-left: none
 			size: 9px 12px
@@ -113,34 +121,6 @@
 			transition: opacity .1s ease
 			opacity: 0
 
-.forms__inputs
-	display: flex
-	flex-wrap: wrap
-	margin: 0 0 -40px -27px
-
-	.forms
-
-		&__input-cont
-			width: calc((100% - 25px * 2) / 2)
-			margin: 0 0 40px 25px
-
-	&--column
-		flex-direction: column
-		margin: 0 !important
-
-		.forms
-
-			&__input-cont
-				width: 100%
-				margin: 0
-
-				&:not(:first-child)
-					margin: 25px 0 0
-
-		~ .forms
-
-			&__submit
-				margin: 23px 0 0 
 
 .form-req
 	text-align: center
@@ -150,12 +130,15 @@
 	i
 		font-style: normal
 		border-radius: 50%
-		color: #fff var(--mainColor)
+		color: #fff var(--main-color)
 		size: 22px
 		display: inline-block
 		padding-top: 3px
 		margin: 0 10px 0 0
 		font-size: 15px
+
+div[id*="calendar_popup"]
+	z-index: 999999 !important
 
 .forms
 	max-height: calc(100vh - 100px)
@@ -176,6 +159,44 @@
 		background-color: #f8f8f8
 		background-position: right 26px center 
 		background-repeat: no-repeat
+
+
+		&-calendar
+
+			&.js__have-content
+				.forms__label
+					transform: translate3d(0,-12px,0)
+					font-size: 12px
+
+			input
+				border: 1px solid transparent
+				padding: 31px 10px 13px 23px
+				height: 67px
+				transition: border-color .3s ease,background-color .3s ease
+				width: 100%
+				background-color: #f8f8f8
+
+				&:focus
+					~ .forms__label
+						transform: translate3d(0,-12px,0)
+						font-size: 12px
+
+			img 
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				opacity: 0
+
+			.forms__label
+				position: absolute
+				top: 0
+				left: 0
+				transition: transform .3s ease,
+
+
+
 
 		&--error:not(:valid)
 			border-color: red
@@ -253,6 +274,8 @@
 
 			&.selectize-control
 				padding: 0
+				margin-left: 30px
+
 
 			.selectize
 
@@ -285,13 +308,47 @@
 							cursor: pointer
 
 							&.active
-								background: var(--secondColor)		
+								background: var(--second-color)		
 
 		&-cont
 			display: flex
 			flex-direction: column-reverse
 			position: relative
 			justify-content: flex-end
+
+			&.forms__checkbox-cont
+				display: flex 
+				flex-wrap: wrap
+				flex-direction: row
+				width: 100%
+				margin: 0
+				justify-content: flex-start
+
+				~ .forms__input-cont 
+					margin-top: 30px
+
+				&:not(:first-child)
+					margin-top: 20px
+
+				> .forms__label
+					order: -1
+					width: 100%
+					position: relative
+					padding: 0
+					margin: 0 !important
+					padding: 0 0 20px 30px
+					font-weight: bold
+					font-size: rem(18)
+
+				.item
+					width: calc((100% - 30px * 2) / 2) !important
+					margin: 0 0 30px 30px
+
+					br 
+						display: none
+
+			&.forms__input-cont--textarea
+				width: 100% 
 
 
 			&--file
@@ -378,7 +435,7 @@
 .form-links
 
 	&__link
-		color: var(--mainColor)
+		color: var(--main-color)
 		border-bottom: 1px solid #d4e3f6
 
 .forms
@@ -448,7 +505,7 @@
 		content: ""
 		size: 34px
 		border-radius: 50%
-		background: url("../img/ico-!.png") center no-repeat, var(--mainColor)
+		background: url("../img/ico-!.png") center no-repeat, var(--main-color)
 		margin-right: 27px
 		flex: none
 

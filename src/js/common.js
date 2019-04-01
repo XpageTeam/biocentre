@@ -38,6 +38,17 @@ let scrollTimeout;
 
 document.addEventListener("DOMContentLoaded", e => {
 
+
+	$("body").on("change", ".forms__input-calendar input", function(e){
+
+		var inputHasFile = $(this).val();
+
+		if(inputHasFile.length){
+			$(this).closest('.forms__input-calendar').addClass('js__have-content');
+		}
+
+	});
+
 	$('body').on('click', '.testemonials-btn', function(){
 		let $this = $(this);
 
@@ -145,9 +156,6 @@ document.addEventListener("DOMContentLoaded", e => {
 	});
 
 
-
-
-
 	if ($(".security-stat__num").length){
 		$(".security-stat__num").countTo();
 	}
@@ -192,6 +200,8 @@ document.addEventListener("DOMContentLoaded", e => {
 		trapFocus: false,
 		touch: false,
 		buttons: ["fullscreen", "slideShow", "close"],
+		keyboard: false,
+		modal: false,
 		beforeClose(instance, slide){
 
 		}
@@ -305,108 +315,108 @@ document.addEventListener("DOMContentLoaded", e => {
 		})
 	}
 
-	if (is.desktop()){
-		$(".h-menu").menuAim({
-			submenuSelector: ".have-sub",
-			activate(menuItem){
-				if (window.matchMedia("screen and (min-width: 1300px)").matches)
-					menuItem.classList.add("js__opened")
-			},
-	   		deactivate(menuItem){
-	   			if (window.matchMedia("screen and (min-width: 1300px)").matches)
-	   				menuItem.classList.remove("js__opened")
-	   		},
-	   		submenuDirection: "below",
-	   		exitMenu(menu){
-	   			if (window.matchMedia("screen and (min-width: 1300px)").matches)
-	   				menu.querySelector(".have-sub.js__opened").classList.remove("js__opened")
-	   		}
-		})
+	// if (is.desktop()){
+	// 	$(".h-menu").menuAim({
+	// 		submenuSelector: ".have-sub",
+	// 		activate(menuItem){
+	// 			if (window.matchMedia("screen and (min-width: 1300px)").matches)
+	// 				menuItem.classList.add("js__opened")
+	// 		},
+	//    		deactivate(menuItem){
+	//    			if (window.matchMedia("screen and (min-width: 1300px)").matches)
+	//    				menuItem.classList.remove("js__opened")
+	//    		},
+	//    		submenuDirection: "below",
+	//    		exitMenu(menu){
+	//    			if (window.matchMedia("screen and (min-width: 1300px)").matches)
+	//    				menu.querySelector(".have-sub.js__opened").classList.remove("js__opened")
+	//    		}
+	// 	})
 
-		$(".h-submenu ul").menuAim({
-			submenuSelector: ".have-sub-sub",
-			activate(menuItem){
-				if (window.matchMedia("screen and (min-width: 1300px)").matches)
-					menuItem.classList.add("js__opened")
-			},
-	   		deactivate(menuItem){
-	   			if (window.matchMedia("screen and (min-width: 1300px)").matches)
-	   				menuItem.classList.remove("js__opened")
-	   		},
-	   		submenuDirection: "right",
-	   		exitMenu(menu){
-	   			if (window.matchMedia("screen and (min-width: 1300px)").matches)
-	   				menu.querySelector(".have-sub-sub.js__opened").classList.remove("js__opened")
-	   		}
-		})
-	}
+	// 	$(".h-submenu ul").menuAim({
+	// 		submenuSelector: ".have-sub-sub",
+	// 		activate(menuItem){
+	// 			if (window.matchMedia("screen and (min-width: 1300px)").matches)
+	// 				menuItem.classList.add("js__opened")
+	// 		},
+	//    		deactivate(menuItem){
+	//    			if (window.matchMedia("screen and (min-width: 1300px)").matches)
+	//    				menuItem.classList.remove("js__opened")
+	//    		},
+	//    		submenuDirection: "right",
+	//    		exitMenu(menu){
+	//    			if (window.matchMedia("screen and (min-width: 1300px)").matches)
+	//    				menu.querySelector(".have-sub-sub.js__opened").classList.remove("js__opened")
+	//    		}
+	// 	})
+	// }
 
-	;(function(){
-		let subLink = document.querySelectorAll(".have-sub .h-menu__link, .h-submenu__item .h-submenu__link");
+	// ;(function(){
+	// 	let subLink = document.querySelectorAll(".have-sub .h-menu__link, .h-submenu__item .h-submenu__link");
 
-		if (!subLink.length)
-			return
+	// 	if (!subLink.length)
+	// 		return
 
-		for (var link of subLink)
-			link.addEventListener("click", function(e){
-				let parent = this.closest(".have-sub-sub") || this.closest(".have-sub");
+	// 	for (var link of subLink)
+	// 		link.addEventListener("click", function(e){
+	// 			let parent = this.closest(".have-sub-sub") || this.closest(".have-sub");
 
-				if (parent.classList.contains("js__opened"))
-					parent.classList.remove("js__opened")
-				else
-					parent.classList.add("js__opened")
+	// 			if (parent.classList.contains("js__opened"))
+	// 				parent.classList.remove("js__opened")
+	// 			else
+	// 				parent.classList.add("js__opened")
 
-				e.preventDefault()
-			})
-	})()
+	// 			e.preventDefault()
+	// 		})
+	// })()
 
-	;(function(){
-		let submenu = document.querySelectorAll(".submenu, .h-submenu");
+	// ;(function(){
+	// 	let submenu = document.querySelectorAll(".submenu, .h-submenu");
 
-		if (!submenu.length)
-			return
+	// 	if (!submenu.length)
+	// 		return
 
-		for (var menu of submenu){
-			let close = document.createElement("button");
+	// 	for (var menu of submenu){
+	// 		let close = document.createElement("button");
 
-			close.classList.add("close-menu")
+	// 		close.classList.add("close-menu")
 
-			close.innerText = "Назад"
+	// 		close.innerText = "Назад"
 
-			close.addEventListener("click", function(e){
-				let parent = this.closest(".have-sub-sub") || this.closest(".have-sub");
+	// 		close.addEventListener("click", function(e){
+	// 			let parent = this.closest(".have-sub-sub") || this.closest(".have-sub");
 
-				if (parent.classList.contains("js__opened"))
-					parent.classList.remove("js__opened")
-				else
-					parent.classList.add("js__opened")
-			})
+	// 			if (parent.classList.contains("js__opened"))
+	// 				parent.classList.remove("js__opened")
+	// 			else
+	// 				parent.classList.add("js__opened")
+	// 		})
 			
-			menu.appendChild(close)
-		}
-	})()
+	// 		menu.appendChild(close)
+	// 	}
+	// })()
 
 
-	let burger = document.querySelector(".head__burger");
+	// let burger = document.querySelector(".head__burger");
 
-	burger.addEventListener("click", function(){
-		let burger = this.querySelector(".burger"),
-			menu = document.querySelector(".head__menu");
+	// burger.addEventListener("click", function(){
+	// 	let burger = this.querySelector(".burger"),
+	// 		menu = document.querySelector(".head__menu");
 
-		if (burger.classList.contains("active")){
-			burger.classList.remove("active")
+	// 	if (burger.classList.contains("active")){
+	// 		burger.classList.remove("active")
 
-			menu.classList.remove("js__opened")
+	// 		menu.classList.remove("js__opened")
 
-			window.mainMenuOpened = false;
-		}else{
-			burger.classList.add("active")
+	// 		window.mainMenuOpened = false;
+	// 	}else{
+	// 		burger.classList.add("active")
 
-			menu.classList.add("js__opened")
+	// 		menu.classList.add("js__opened")
 
-			window.mainMenuOpened = true;
-		}
-	})
+	// 		window.mainMenuOpened = true;
+	// 	}
+	// })
 
 	$("body").on("click", e => {
 		let $target = $(e.target),
