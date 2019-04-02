@@ -1,12 +1,33 @@
+.fancybox-content
+	padding: 0 !important
+
+	&::-webkit-scrollbar 
+		width: 12px
+
+	&::-webkit-scrollbar-track
+		border-radius: 10px
+		background: var(--second-color)
+
+	&::-webkit-scrollbar-thumb 
+		border-radius: 10px
+		background: var(--main-color)
+
 .popup-form
 	display: none
 	border: 1px solid var(--border-color)
-	padding: 55px 65px 70px !important
 	width: 920px
+
+	&__content
+		padding: 0 65px 70px !important
 
 	&__title
 		font-size: 30px
 		margin-bottom: 20px
+		padding: 20px
+		background: #fff
+		z-index: 10
+		position: sticky
+		top: 0
 
 	&__text, &__title, &__info
 		text-align: center
@@ -51,10 +72,32 @@
 						&-message
 							color: rgba(#000, .5)
 
+div:not([class*="big-form-"])
+
+#form_addServices
+	.forms-wrap
+		display: flex 
+		flex-wrap: wrap
+
+	.forms__input-cont
+		width: calc((100% - 30px * 2) / 2)
+		margin: 0 0 30px 30px
+
+
 .wr-block
 	display: flex 
 	flex-wrap: wrap
 	margin: 0 0 -30px -30px
+
+	&--bottom
+		margin-top: 40px
+
+		a 
+			color: var(--main-color)
+
+	&.clear
+		.title-block
+			display: none
 
 	&:not(:first-child)
 		margin-top: 40px
@@ -77,6 +120,9 @@
 	.subtitle
 		margin-bottom: 30px
 
+		&-label
+			margin-top: 20px
+
 .checkbox
 	position: relative
 
@@ -95,7 +141,7 @@
 	&__label
 		cursor: pointer
 		display: flex
-		align-items: center
+		align-items: flex-start
 		position: relative
 		user-select: none
 
@@ -146,6 +192,7 @@ div[id*="calendar_popup"]
 	&__submit
 		text-align: center
 		margin: 70px 0 0
+
 
 	&__req
 		margin: 40px 0 0
@@ -312,7 +359,7 @@ div[id*="calendar_popup"]
 
 		&-cont
 			display: flex
-			flex-direction: column-reverse
+			flex-direction: column
 			position: relative
 			justify-content: flex-end
 
@@ -323,6 +370,10 @@ div[id*="calendar_popup"]
 				width: 100%
 				margin: 0
 				justify-content: flex-start
+
+				&.one-checkbox
+					.item
+						width: 100% !important
 
 				~ .forms__input-cont 
 					margin-top: 30px

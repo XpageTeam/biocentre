@@ -9,8 +9,8 @@ $(_ => {
 			$parent = $this.closest(".tabs");
 		
 
-		if ($this.hasClass("active"))
-			return
+		// if ($this.hasClass("active"))
+		// 	return
 
 
 		$parent.find(".tabs-tab.active, .tabs-content.active").removeClass("active");

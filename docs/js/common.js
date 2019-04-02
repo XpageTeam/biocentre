@@ -33525,21 +33525,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _jquery2.default)(function (_) {
 
-	(0, _jquery2.default)(".tabs-tab").click(function () {
-		var $this = (0, _jquery2.default)(this);
+		(0, _jquery2.default)(".tabs-tab").click(function () {
+				var $this = (0, _jquery2.default)(this);
 
-		var id = $this.attr("data-id"),
-		    $parent = $this.closest(".tabs");
+				var id = $this.attr("data-id"),
+				    $parent = $this.closest(".tabs");
 
-		if ($this.hasClass("active")) return;
+				// if ($this.hasClass("active"))
+				// 	return
 
-		$parent.find(".tabs-tab.active, .tabs-content.active").removeClass("active");
 
-		$this.addClass("active");
-		$parent.find(".tabs-content[data-id='" + id + "']").addClass("active");
+				$parent.find(".tabs-tab.active, .tabs-content.active").removeClass("active");
 
-		(0, _jquery2.default)('html, body').animate({ scrollTop: (0, _jquery2.default)(".tabs-content[data-id='" + id + "']").offset().top - (0, _jquery2.default)('.head.js__show').innerHeight() - 20 }, 500);
-	});
+				$this.addClass("active");
+				$parent.find(".tabs-content[data-id='" + id + "']").addClass("active");
+
+				(0, _jquery2.default)('html, body').animate({ scrollTop: (0, _jquery2.default)(".tabs-content[data-id='" + id + "']").offset().top - (0, _jquery2.default)('.head.js__show').innerHeight() - 20 }, 500);
+		});
 });
 
 /***/ }),
