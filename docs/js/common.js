@@ -20358,20 +20358,6 @@ __webpack_require__(344);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import mobileMenu from "./mobile-menu.js"
-
-
-// import {sameHeights} from "./x-widgets.js"
-
-// import "./main-page.js"
-// import "./main-steps.js"
-// import "./main-slider.js"
-// import "./standart-page.js"
-// import "./vacancy.js"
-// import "./cases.js"
-// import "./title-slider.js"
-// import "./detail-service.js"
-
 window.$ = _jquery2.default;
 window.jQuery = _jquery2.default;
 
@@ -20497,10 +20483,23 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		$this.next('.faq__item-bot').slideToggle();
 	});
 
-	(0, _jquery2.default)("body").on('click', '[href*="#"]', function (e) {
-		e.preventDefault();
-		(0, _jquery2.default)('html,body').stop().animate({ scrollTop: (0, _jquery2.default)(this.hash).offset().top - (0, _jquery2.default)('.head.js__show').innerHeight() }, 1000);
+	(0, _jquery2.default)('.h-menu__item').click(function () {
+		var $this = (0, _jquery2.default)(this);
+		(0, _jquery2.default)('.h-menu__item').removeClass('active');
+		$this.addClass('active');
 	});
+
+	if ((0, _jquery2.default)('body').hasClass('js__scroll')) {
+		(0, _jquery2.default)("body").on('click', '[href*="#"]', function (e) {
+			e.preventDefault();
+			(0, _jquery2.default)('html,body').stop().animate({ scrollTop: (0, _jquery2.default)(this.hash).offset().top - (0, _jquery2.default)('.head.js__show').innerHeight() }, 1000);
+		});
+	} else {
+		(0, _jquery2.default)("body").on('click', '[href*="#"]', function (e) {
+			e.preventDefault();
+			(0, _jquery2.default)('html,body').stop().animate({ scrollTop: (0, _jquery2.default)(this.hash).offset().top }, 1000);
+		});
+	}
 
 	if ((0, _jquery2.default)(".security-stat__num").length) {
 		(0, _jquery2.default)(".security-stat__num").countTo();
@@ -33521,27 +33520,41 @@ var _jquery = __webpack_require__(67);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _is_js = __webpack_require__(337);
+
+var _is_js2 = _interopRequireDefault(_is_js);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function (_) {
 
+	if (_is_js2.default.desktop()) {
+
 		(0, _jquery2.default)(".tabs-tab").click(function () {
-				var $this = (0, _jquery2.default)(this);
+			var $this = (0, _jquery2.default)(this);
 
-				var id = $this.attr("data-id"),
-				    $parent = $this.closest(".tabs");
+			var id = $this.attr("data-id"),
+			    $parent = $this.closest(".tabs");
 
-				// if ($this.hasClass("active"))
-				// 	return
+			// if ($this.hasClass("active"))
+			// 	return
 
 
-				$parent.find(".tabs-tab.active, .tabs-content.active").removeClass("active");
+			$parent.find(".tabs-tab.active, .tabs-content.active").removeClass("active");
 
-				$this.addClass("active");
-				$parent.find(".tabs-content[data-id='" + id + "']").addClass("active");
+			$this.addClass("active");
+			$parent.find(".tabs-content[data-id='" + id + "']").addClass("active");
 
-				(0, _jquery2.default)('html, body').animate({ scrollTop: (0, _jquery2.default)(".tabs-content[data-id='" + id + "']").offset().top - (0, _jquery2.default)('.head.js__show').innerHeight() - 20 }, 500);
+			(0, _jquery2.default)('html, body').animate({ scrollTop: (0, _jquery2.default)(".tabs-content[data-id='" + id + "']").offset().top - (0, _jquery2.default)('.head.js__show').innerHeight() - 20 }, 500);
 		});
+	} else {
+		(0, _jquery2.default)(".services__content-title").click(function () {
+			var $this = (0, _jquery2.default)(this);
+
+			$this.toggleClass('js__active');
+			$this.nextAll('.services__content-wr').slideToggle();
+		});
+	}
 });
 
 /***/ }),

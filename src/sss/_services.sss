@@ -197,11 +197,57 @@
 		&__price
 			font-size: 1.2rem
 
+		&__list
+			display: none
+
+		&__content
+			opacity: 1
+			transform: none
+			margin: 0
+
+			&-title
+				position: relative
+				padding: 20px 30px 20px 0
+
+				&.js__active
+					&:after
+						transform: rotate(225deg)
+
+				&:after
+					content: ''
+					display: block
+					position: absolute
+					right: 20px
+					top: calc(50% - 3px)
+					size: 6px
+					border-right: 1px solid #000
+					border-bottom: 1px solid #000
+					transform: rotate(45deg)
+					transition: transform .3s ease
+
+
+
+
+			&-wr
+				display: none
+				margin: 20px 0
+
+
+	.tabs-content
+		opacity: 1 !important
+		pointer-events: all !important
+		position: static !important
+
+
+		&:not(:first-child)
+			border-top: 1px solid var(--main-color)
+
+
 @media screen and (max-width: 660px)
 	
 	.services
 		&__list
-			margin: 0 0 -30px 0
+			margin: 20px 0 -30px 0
 
 		&__item
 			width: 100%
@@ -219,3 +265,7 @@
 					left: 0px
 				&-next
 					right: 0
+
+		&__content-title
+			font-size: 1rem
+			padding: 15px 30px 15px 0

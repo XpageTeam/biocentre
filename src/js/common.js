@@ -4,20 +4,8 @@ import "selectize/dist/js/selectize.min.js"
 import "slick-carousel"
 import Swiper from "swiper/dist/js/swiper.js";
 
-// import {sameHeights} from "./x-widgets.js"
-
-// import "./main-page.js"
-// import "./main-steps.js"
-// import "./main-slider.js"
-// import "./standart-page.js"
-// import "./vacancy.js"
-// import "./cases.js"
-// import "./title-slider.js"
-// import "./detail-service.js"
-
 import "./tabs.js"
 import "./forms.js"
-// import mobileMenu from "./mobile-menu.js"
 
 
 window.$ = $;
@@ -150,10 +138,28 @@ document.addEventListener("DOMContentLoaded", e => {
 		$this.next('.faq__item-bot').slideToggle();
 	})
 
-	$("body").on('click', '[href*="#"]', function(e){
-		e.preventDefault();
-		$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - $('.head.js__show').innerHeight() }, 1000);
-	});
+
+	$('.h-menu__item').click(function(){
+		let $this = $(this);
+		$('.h-menu__item').removeClass('active');
+		$this.addClass('active');
+	})
+
+
+	if($('body').hasClass('js__scroll')){
+		$("body").on('click', '[href*="#"]', function(e){
+			e.preventDefault();
+			$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - $('.head.js__show').innerHeight() }, 1000);
+		});
+
+	} else {
+		$("body").on('click', '[href*="#"]', function(e){
+			e.preventDefault();
+			$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top}, 1000);
+		});
+	}
+
+
 
 
 	if ($(".security-stat__num").length){
