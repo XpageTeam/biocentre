@@ -166,8 +166,10 @@ document.addEventListener("DOMContentLoaded", e => {
 		$(".security-stat__num").countTo();
 	}
 
+	// setTimeout(function(){
+		$('.banner-logo').addClass('js__animated')
 
-	$('.banner-logo').addClass('js__animated')
+	// }, 2300)
 
 
 
