@@ -5,7 +5,7 @@
 <circle id="shar1" cx="0" cy="0" r="3" fill="white"></circle>
 <animateMotion
 	xlink:href="#shar1"
-	dur="15s"
+	dur="20s"
 	begin="4s"
 	fill="freeze"
 	repeatCount="indefinite"
@@ -22,7 +22,7 @@
 </g>
 <animateMotion
 	xlink:href="#halth"
-	dur="15s"
+	dur="20s"
 	begin="0s"
 	fill="freeze"
 	repeatCount="indefinite">
@@ -35,7 +35,7 @@
 <circle id="shar2" cx="0" cy="0" r="6" fill="white"></circle>
 <animateMotion
 	xlink:href="#shar2"
-	dur="17s"
+	dur="23s"
 	begin="1s"
 	fill="freeze"
 	repeatCount="indefinite"
@@ -52,7 +52,7 @@
 
 <animateMotion
 	xlink:href="#life"
-	dur="17s"
+	dur="23s"
 	begin="4s"
 	fill="freeze"
 	repeatCount="indefinite">
@@ -65,8 +65,8 @@
 <circle id="shar3" cx="0" cy="0" r="3" fill="white"></circle>
 <animateMotion
 	xlink:href="#shar3"
-	dur="12s"
-	begin="2s"
+	dur="26s"
+	begin="12s"
 	fill="freeze"
 	repeatCount="indefinite"
 	stroke="white"
@@ -84,8 +84,8 @@
 
 <animateMotion
 	xlink:href="#regulation"
-	dur="16s"
-	begin="6s"
+	dur="26s"
+	begin="16s"
 	fill="freeze"
 	repeatCount="indefinite">
 	<mpath xlink:href="#circle3"></mpath>
@@ -98,8 +98,8 @@
 <circle id="shar4" cx="0" cy="0" r="6" fill="white"></circle>
 <animateMotion
 	xlink:href="#shar4"
-	dur="20s"
-	begin="4s"
+	dur="30s"
+	begin="9s"
 	fill="freeze"
 	repeatCount="indefinite"
 	stroke="white"
@@ -120,8 +120,8 @@
 
 <animateMotion
 	xlink:href="#nutrition"
-	dur="20s"
-	begin="8s"
+	dur="30s"
+	begin="13s"
 	fill="freeze"
 	repeatCount="indefinite">
 	<mpath xlink:href="#circle4"></mpath>
@@ -133,7 +133,7 @@
 
 <animateMotion
 	xlink:href="#shar5"
-	dur="15s"
+	dur="25s"
 	begin="6s"
 	fill="freeze"
 	repeatCount="indefinite">
@@ -151,7 +151,7 @@
 
 <animateMotion
 	xlink:href="#study"
-	dur="15s"
+	dur="25s"
 	begin="6s"
 	fill="freeze"
 	repeatCount="indefinite">
