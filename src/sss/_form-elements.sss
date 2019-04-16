@@ -1,15 +1,40 @@
-#service, #quality
-	width: 1000px
+.fancybox-content
+	padding: 0 !important
+
+	&::-webkit-scrollbar 
+		width: 12px
+
+	&::-webkit-scrollbar-track
+		border-radius: 10px
+		background: var(--second-color)
+
+	&::-webkit-scrollbar-thumb 
+		border-radius: 10px
+		background: var(--main-color)
+
+div[class*="big-form"]
+	.fancybox-close-small
+		position: sticky
+		float: right
+		top: 0
+		z-index: 15
 
 .popup-form
 	display: none
-	border: 1px solid var(--borderColor)
-	padding: 55px 65px 70px !important
-	width: 655px
+	border: 1px solid var(--border-color)
+	width: 920px
+
+	&__content
+		padding: 0 65px 70px !important
 
 	&__title
 		font-size: 30px
 		margin-bottom: 20px
+		padding: 20px
+		background: #fff
+		z-index: 10
+		position: sticky
+		top: 0
 
 	&__text, &__title, &__info
 		text-align: center
@@ -38,7 +63,7 @@
 				border: none
 				background: none
 				padding: 0 0 2px
-				color: var(--mainColor)
+				color: var(--main-color)
 
 				&:after
 					display: none
@@ -53,6 +78,57 @@
 
 						&-message
 							color: rgba(#000, .5)
+
+div:not([class*="big-form-"])
+
+#form_addServices
+	.forms-wrap
+		display: flex 
+		flex-wrap: wrap
+
+	.forms__input-cont
+		width: calc((100% - 30px * 2) / 2)
+		margin: 0 0 30px 30px
+
+
+.wr-block
+	display: flex 
+	flex-wrap: wrap
+	margin: 0 0 -30px -30px
+
+	&--bottom
+		margin-top: 40px
+
+		a 
+			color: var(--main-color)
+
+	&.clear
+		.title-block
+			display: none
+
+	&:not(:first-child)
+		margin-top: 40px
+
+	.title-block
+		width: 100%
+		margin-bottom: 20px
+		font-size: rem(22)
+		text-align: center
+		text-align: left
+		font-weight: bold
+
+	.forms__input-cont
+		width: calc((100% - 30px * 2) / 2)
+		margin: 0 0 30px 30px
+
+	.title-block, .subtitle
+		margin-left: 30px
+
+	.subtitle
+		margin-bottom: 30px
+
+		&-label
+			margin-top: 20px
 
 .checkbox
 	position: relative
@@ -72,7 +148,7 @@
 	&__label
 		cursor: pointer
 		display: flex
-		align-items: center
+		align-items: flex-start
 		position: relative
 		user-select: none
 
@@ -89,7 +165,7 @@
 			size: 32px
 
 		&:after
-			border: 2px solid var(--mainColor)
+			border: 2px solid var(--main-color)
 			border-top: none
 			border-left: none
 			size: 9px 12px
@@ -98,34 +174,6 @@
 			transition: opacity .1s ease
 			opacity: 0
 
-.forms__inputs
-	display: flex
-	flex-wrap: wrap
-	margin: 0 0 -40px -27px
-
-	.forms
-
-		&__input-cont
-			width: calc((100% - 25px * 2) / 2)
-			margin: 0 0 40px 25px
-
-	&--column
-		flex-direction: column
-		margin: 0 !important
-
-		.forms
-
-			&__input-cont
-				width: 100%
-				margin: 0
-
-				&:not(:first-child)
-					margin: 25px 0 0
-
-		~ .forms
-
-			&__submit
-				margin: 23px 0 0 
 
 .form-req
 	text-align: center
@@ -135,18 +183,23 @@
 	i
 		font-style: normal
 		border-radius: 50%
-		color: #fff var(--mainColor)
+		color: #fff var(--main-color)
 		size: 22px
 		display: inline-block
 		padding-top: 3px
 		margin: 0 10px 0 0
 		font-size: 15px
 
+div[id*="calendar_popup"]
+	z-index: 999999 !important
+
 .forms
+	max-height: calc(100vh - 100px)
 
 	&__submit
 		text-align: center
 		margin: 70px 0 0
+
 
 	&__req
 		margin: 40px 0 0
@@ -160,6 +213,44 @@
 		background-color: #f8f8f8
 		background-position: right 26px center 
 		background-repeat: no-repeat
+
+
+		&-calendar
+
+			&.js__have-content
+				.forms__label
+					transform: translate3d(0,-12px,0)
+					font-size: 12px
+
+			input
+				border: 1px solid transparent
+				padding: 31px 10px 13px 23px
+				height: 67px
+				transition: border-color .3s ease,background-color .3s ease
+				width: 100%
+				background-color: #f8f8f8
+
+				&:focus
+					~ .forms__label
+						transform: translate3d(0,-12px,0)
+						font-size: 12px
+
+			img 
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				opacity: 0
+
+			.forms__label
+				position: absolute
+				top: 0
+				left: 0
+				transition: transform .3s ease,
+
+
+
 
 		&--error:not(:valid)
 			border-color: red
@@ -237,6 +328,8 @@
 
 			&.selectize-control
 				padding: 0
+				margin-left: 30px
+
 
 			.selectize
 
@@ -269,13 +362,55 @@
 							cursor: pointer
 
 							&.active
-								background: var(--secondColor)		
+								background: var(--second-color)		
 
 		&-cont
 			display: flex
-			flex-direction: column-reverse
+			flex-direction: column
 			position: relative
 			justify-content: flex-end
+
+			&.forms__checkbox-cont
+				display: flex 
+				flex-wrap: wrap
+				flex-direction: row
+				width: 100%
+				margin: 0
+				justify-content: flex-start
+
+				&.one-checkbox
+					.item
+						width: 100% !important
+
+				~ .forms__input-cont 
+					margin-top: 30px
+
+				&:not(:first-child)
+					margin-top: 20px
+
+				> .forms__label
+					order: -1
+					width: 100%
+					position: relative
+					padding: 0
+					margin: 0 !important
+					padding: 0 0 20px 30px
+					font-weight: bold
+					font-size: rem(18)
+
+				.item
+					width: calc((100% - 30px * 2) / 2) !important
+					margin: 0 0 30px 30px
+
+					br 
+						display: none
+
+			&.forms__input-cont--textarea
+				width: 100%
+
+				+ .forms__input-cont--textarea
+					margin-top: 0
+
 
 			&--file
 				flex-wrap: wrap
@@ -361,7 +496,7 @@
 .form-links
 
 	&__link
-		color: var(--mainColor)
+		color: var(--main-color)
 		border-bottom: 1px solid #d4e3f6
 
 .forms
@@ -431,7 +566,7 @@
 		content: ""
 		size: 34px
 		border-radius: 50%
-		background: url("../img/ico-!.png") center no-repeat, var(--mainColor)
+		background: url("../img/ico-!.png") center no-repeat, var(--main-color)
 		margin-right: 27px
 		flex: none
 
@@ -441,7 +576,6 @@
 
 @media screen and (max-width: 1000px)
 	.popup-form
-		padding: 20px !important
 
 		&__title
 			font-size: 24px
@@ -452,10 +586,58 @@
 		&__info
 			margin: 25px 0 0
 
+		&__content
+			padding: 0 25px 35px!important
+
 	.forms
 
 		&__req, &__submit
 			margin: 20px 0 0
+
+		&__input 
+			&:focus, &.js__have-content
+
+				~ label
+					transform: translate3d(0, -10px, 0)
+					font-size: 10px
+
+		&__label
+			font-size: 14px
+
+	.wr-block
+		margin: 0 0 -20px -20px
+
+		.forms__input-cont
+			width: calc((100% - 20px * 2) / 2)
+			margin: 0 0 20px 20px
+
+
+
+	.forms__input-cont
+		&.forms__input-cont--textarea, &.forms__checkbox-cont
+			width: 100%
+
+		&.forms__checkbox-cont .item
+			margin: 0 0 20px 0
+			width: calc((100% - 10px * 2) / 2) !important
+
+	.forms__input-cont.forms__checkbox-cont>.forms__label
+		padding: 0 0 20px 0
+
+	.forms__checkbox-cont
+		+ .forms__input-cont--textarea
+			margin-top: 0 !important
+
+	.wr-block
+		&:not(:first-child)
+			margin-top: 20px
+
+		.subtitle, .title-block
+			margin-left: 20px
+
+	.title-block
+		+ .forms__checkbox-cont
+			margin-top: 0 !important
 
 
 @media screen and (max-width: 660px)
@@ -498,4 +680,34 @@
 									margin: 15px 0 0 !important
 
 	.popup-form
-		padding: 20px 16px !important
+		width: 100%
+
+		&__title
+			padding: 20px 0
+			margin: 0
+	.forms
+		max-height: 100%
+		height: 100%
+		margin: 0 !important
+
+	.wr-block
+		display: block
+		margin: 0
+
+		.title-block
+			margin-bottom: 0
+			font-size: 1rem
+			margin-bottom: 20px
+
+		.subtitle, .title-block
+			margin-left: 0
+
+
+	.forms__input-cont
+		width: 100%!important
+
+		&.forms__checkbox-cont .item
+			width: 100% !important
+
+	.forms__input
+		padding: 40px 10px 13px 23px
