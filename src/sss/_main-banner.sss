@@ -38,9 +38,9 @@
 		&:before 
 			content: ''
 			position: absolute
-			top: -10px
-			left: -10px
-			size: 20px
+			top: -60px
+			left: -60px
+			size: 120px
 			background: var(--main-color)
 			z-index: 10
 			display: block
@@ -63,11 +63,23 @@
 				opacity: 1 
 
 
+@media screen and (max-width: 1600px)
+	
+	.banner-logo:before
+		top: -45px
+
 @media screen and (max-width: 1500px)
 	
 	.banner-logo
 		margin-right: 
 		max-width: 430px
+
+
+		&:before
+			top: -50px
+			left: -50px
+			width: 100px
+			height: 100px
 
 	.main-banner__title
 		font-size: 2rem
@@ -81,6 +93,16 @@
 		&__text
 			margin-top: 25px
 
+@media screen and (max-width: 1300px)
+
+	.banner-logo
+
+		&:before
+			top: -40px
+			left: -40px
+			width: 80px
+			height: 80px
+
 @media screen and (max-width: 1200px)
 
 	.main-banner__cont
@@ -92,6 +114,14 @@
 		margin-left: 60px
 		margin-right: 0
 
+@media screen and (max-width: 1000px)
+	.banner-logo
+
+		&:before
+			top: -30px
+			left: -30px
+			width: 60px
+			height: 60px
 @media screen and (max-width: 660px)
 
 	.main-banner
@@ -118,4 +148,10 @@
 
 	.banner-logo
 		margin: 20px 0 40px
+
+		&:before
+			top: -33px
+			left: -33px
+			width: 66px
+			height: 66px
 
