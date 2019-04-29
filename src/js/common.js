@@ -40,8 +40,21 @@ document.addEventListener("DOMContentLoaded", e => {
 	$('body').on('click', '.testemonials-btn', function(){
 		let $this = $(this);
 
+		$this.closest('.testemonials__item').toggleClass('js__open')
+
+
+		if (!$(this).data('status')) {
+		  	$(this).html('Свернуть');
+		    $(this).data('status', true);
+		  } else {
+		  	$(this).html('Развернуть');
+		    $(this).data('status', false);
+		  }
+
 		$this.closest('.testemonials__item').find('.testemonials__item-files').slideToggle();
 	})
+
+
 
 	var swiper = new Swiper( '.security-slider .swiper-container', {
 		pagination: '.swiper-pagination',
@@ -228,6 +241,7 @@ document.addEventListener("DOMContentLoaded", e => {
 			// arrows: false,
 			// lazyLoad: 'progressive',
 			autoplay: true,
+			adaptiveHeight: true,
 			responsive: [
 				{
 					breakpoint: 660,
@@ -248,6 +262,7 @@ document.addEventListener("DOMContentLoaded", e => {
 			// arrows: false,
 			// lazyLoad: 'progressive',
 			autoplay: true,
+			adaptiveHeight: true,
 			responsive: [
 				{
 					breakpoint: 660,
@@ -267,12 +282,12 @@ document.addEventListener("DOMContentLoaded", e => {
 			return +$slide.find("[data-id]").data("id") == value;
 			filtered = false;
 		})
+		console.log(11);
 
-		
 	})
 
 	$('.reset-filter').click(function(){
-		$('.slider-nav input').prop('checked', false);
+		$('.testemonials-nav input').prop('checked', false);
 		$testemonialsSlider.slick('slickUnfilter');
 	})
 
