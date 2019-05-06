@@ -1,41 +1,32 @@
-import $ from "jquery";
-import is from "is_js";
+import $ from "jquery"
 
-$(_ => {
+$(e => {
+	$(".tabs-tab").click(function(){
+		let $this = $(this);
 
-	if (is.desktop()){
+		
+		let id = $this.attr("data-id"),
+			$parent = $this.closest(".tabs");
+		
 
-		$(".tabs-tab").click(function(){
-			let $this = $(this);
-			
-			let id = $this.attr("data-id"),
-				$parent = $this.closest(".tabs");
-			
-
-			// if ($this.hasClass("active"))
-			// 	return
-
-
+		if (!$this.hasClass("active")){
 			$parent.find(".tabs-tab.active, .tabs-content.active").removeClass("active");
-
 			$this.addClass("active");
-			$parent.find(".tabs-content[data-id='"+id+"']").addClass("active");
+			$parent.find(`.tabs-content[data-id='${id}']`).addClass("active");
 
-			$('html, body').animate({ scrollTop: $(".tabs-content[data-id='"+id+"']").offset().top - $('.head.js__show').innerHeight() - 20}, 500);
+			$('html, body').animate({ scrollTop: $(`.tabs-content[data-id='${id}']`).offset().top - $('.head.js__show').innerHeight() - 20}, 500)
+		}else{
+			$parent.find(".tabs-tab.active, .tabs-content.active").removeClass("active");
+		}
 
+	});
 
+	$(".services__content-title").click(function(){
+		let $this = $(this);
 
-		});
-	} else {
-		$(".services__content-title").click(function(){
-			let $this = $(this);
-			
+		if (window.matchMedia("(max-width: 1000px)").matches){
 			$this.toggleClass('js__active');
 			$this.nextAll('.services__content-wr').slideToggle();
-
-		});
-
-	}
-
-
-});
+		}
+	})
+})

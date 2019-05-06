@@ -70,6 +70,7 @@
 			flex-direction: column-reverse
 			width: 100%
 			margin: 0 0 40px 30px
+			position: relative
 
 			&--min 
 				width: calc((100% - 30px * 2) / 2)
@@ -84,6 +85,15 @@
 
 				&:active, &:focus
 					border-color: var(--main-color)
+
+				&:required
+
+					+ label
+
+						&:after
+							color: red
+							display: inline-block
+							content: "*"
 
 	&__bottom
 		margin-top: 40px

@@ -19,7 +19,7 @@
 		background-size: cover
 		z-index: 100
 		padding: 25px 72px
-		position: fixed
+		position: sticky
 
 		&.js__show
 			transform: translateY(0)
@@ -171,6 +171,12 @@
 	.head.js__scrolled
 		padding: 25px 35px
 
+	select.h-city__select
+		display: block !important
+
+	div.h-city__select
+		display: none !important
+
 	.burger
 		position: relative
 		z-index: 150
@@ -246,8 +252,8 @@
 	
 @media screen and (max-width: 660px)
 
-	.head.js__scrolled
-		position: absolute
+	// .head.js__scrolled
+		// position: absolute
 
 	.head
 		padding: 20px

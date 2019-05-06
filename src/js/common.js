@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", e => {
 	$('body').on('click', '.testemonials-btn', function(){
 		let $this = $(this);
 
-		$this.closest('.testemonials__item').find('.testemonials__item-files').slideToggle();
+		$this.closest('.testemonials__item').find('.testemonials__item-files, .two').slideToggle();
 	})
 
 	var swiper = new Swiper( '.security-slider .swiper-container', {
@@ -230,6 +230,13 @@ document.addEventListener("DOMContentLoaded", e => {
 			autoplay: true,
 			responsive: [
 				{
+					breakpoint: 1200,
+					settings: {
+						arrows: false,
+						dots: true
+					}
+				},
+				{
 					breakpoint: 660,
 					settings: {
 						slidesToShow: 1,
@@ -249,6 +256,13 @@ document.addEventListener("DOMContentLoaded", e => {
 			// lazyLoad: 'progressive',
 			autoplay: true,
 			responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						arrows: false,
+						dots: true
+					}
+				},
 				{
 					breakpoint: 660,
 					settings: {

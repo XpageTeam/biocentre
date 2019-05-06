@@ -24,6 +24,9 @@
 
 @import "_footer.sss"
 
+#mapAll
+	max-width: 100%
+
 .ico
 	&-sale, &-info
 		position: absolute
@@ -41,8 +44,14 @@
 	&-info
 		background: var(--main-color)
 
+	&-pdf
+		background: url("../img/ico-pdf.png") no-repeat
+
+	&-txt
+		background: url("../img/ico-txt.png") no-repeat
+
 	&-jpg
-		background: url('../img/ico-jpg.png') no-repeat left top
+		background: url('../img/ico-jpg.png') no-repeat
 
 	&-zoom, &-download
 		size: 42px
@@ -168,6 +177,15 @@
 			&:after 
 				display: none
 
+.form_result
+	text-align: center
+	padding: 30px
+
+	span
+		font-weight: bold
+		font-size: 20px
+		display: block
+		margin-bottom: 15px
 
 
 @media screen and (max-width: 1000px)
@@ -177,3 +195,6 @@
 @media screen and (max-width: 667px)
 	.wrapper 
 		padding: 0 20px
+	
+	#mapAllHide, #mapAll
+		height: 100% !important

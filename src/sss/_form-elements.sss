@@ -252,16 +252,18 @@ div[id*="calendar_popup"]
 
 
 
-		&--error:not(:valid)
-			border-color: red
+		&--error, &_error
 
-			~ .forms__error-message
-				opacity: 1
+			&:not(:valid)
+				border-color: red
 
-			&:focus
+				~ .forms__error-message
+					opacity: 1
 
-			~ .forms__error-message
-				opacity: 0
+				&:focus
+
+				~ .forms__error-message
+					opacity: 0
 
 
 		&::-webkit-input-placeholder
