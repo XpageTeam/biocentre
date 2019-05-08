@@ -57,6 +57,11 @@ document.addEventListener("DOMContentLoaded", e => {
 			modifier: 1.5,
 			slideShadows : false,
 		},
+		lazy: {
+			loadPrevNext: true,
+			// loadPrevNextAmount: 2,
+			loadOnTransitionStart: true,
+		},
 		navigation: {
 	        nextEl: '.security-slider__nav .swiper-button-next',
 	        prevEl: '.security-slider__nav .swiper-button-prev',
