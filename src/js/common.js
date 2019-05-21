@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", e => {
 	$("body").on("change", ".forms__input-calendar input", function(e){
 
 		var inputHasFile = $(this).val();
-
 		if(inputHasFile.length){
 			$(this).closest('.forms__input-calendar').addClass('js__have-content');
 		}
@@ -54,7 +53,7 @@ document.addEventListener("DOMContentLoaded", e => {
 		    $(this).data('status', false);
 		  }
 
-		$this.closest('.testemonials__item').find('.testemonials__item-files').slideToggle();
+		// $this.closest('.testemonials__item').find('.testemonials__item-files').slideToggle();
 
 	})
 
@@ -225,17 +224,7 @@ document.addEventListener("DOMContentLoaded", e => {
 		
 	})
 	
-	$(".fancybox").fancybox({
-		animationEffect: false,
-		trapFocus: false,
-		touch: false,
-		buttons: ["fullscreen", "slideShow", "close"],
-		keyboard: false,
-		modal: false,
-		beforeClose(instance, slide){
 
-		}
-	})
 
 	
 
@@ -324,8 +313,10 @@ document.addEventListener("DOMContentLoaded", e => {
 	var menuClone = $('.h-menu').clone();
 	var contactsClone = $('.head__contacts').clone();
 	var socClone = $('footer .soc').clone();
+	var btnClone = $('.head .head__btn').clone();
 
 	$('.mobile-menu').append(contactsClone);
+	$('.mobile-menu').append(btnClone);
 	$('.mobile-menu').append(menuClone);
 	$('.mobile-menu').append(socClone);
 
@@ -360,6 +351,18 @@ document.addEventListener("DOMContentLoaded", e => {
 			}
 		})
 	}
+
+	$(".fancybox").fancybox({
+		animationEffect: false,
+		trapFocus: false,
+		touch: false,
+		buttons: ["fullscreen", "slideShow", "close"],
+		keyboard: false,
+		modal: false,
+		beforeClose(instance, slide){
+
+		}
+	})
 
 	// if (is.desktop()){
 	// 	$(".h-menu").menuAim({
@@ -486,17 +489,15 @@ document.addEventListener("DOMContentLoaded", e => {
 
 $(window).on("load scroll resize", e => {
 
-
-
-
-	if ($(window).scrollTop() >= 800){
+	if ($(window).scrollTop() >= 800 && $(window).width() > 1000){
 		$(".head").addClass("js__scrolled");
 		$("body").addClass("js__scroll");
 		setTimeout(e => {
 			$(".head").addClass("js__show")
 		}, 500);
 	}else{
-		$(".head").removeClass("js__scrolled").removeClass("js__show");
+		$(".head").removeClass("js__scrolled");
+		$(".head").removeClass("js__show");
 		$("body").removeClass("js__scroll");
 	}
 

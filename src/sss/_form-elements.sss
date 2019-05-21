@@ -214,6 +214,32 @@ div[id*="calendar_popup"]
 		background-position: right 26px center 
 		background-repeat: no-repeat
 
+		&.forms__input--file 
+			&.js__have-content
+
+				~ 
+					.forms__label--file
+						font-size: 0 !important
+			&:focus
+
+				~ 
+					.forms__label--file
+						font-size: 0 !important
+
+
+		&--file
+			padding: 31px 50px 13px 23px
+
+			&-support
+				padding: 18px 50px 13px 23px
+
+			&:focus
+
+				~ 
+					.forms__label--file
+						font-size: 0 !important
+					.forms__input
+						padding: 18px 10px 13px 23px
 
 		&-calendar
 
@@ -370,7 +396,7 @@ div[id*="calendar_popup"]
 			display: flex
 			flex-direction: column
 			position: relative
-			justify-content: flex-end
+			// justify-content: flex-end
 
 			&.forms__checkbox-cont
 				display: flex 
@@ -445,7 +471,7 @@ div[id*="calendar_popup"]
 			pointer-events: none
 
 			~ .forms__input
-				width: calc(100% - 147px)
+				width: 100%
 
 	&__label
 		margin-bottom: 10px
@@ -458,18 +484,47 @@ div[id*="calendar_popup"]
 		color: rgba(#000, .5)
 
 		&--file
-			position: static
+			position: absolute
+			margin-bottom: 10px
+			flex: none
+			top: 0
+			left: 0
+			position: absolute
+			padding: 24px 0 0 22px
+			width: 100%
+			height: 67px
+			color: rgba(0,0,0,.5)
+
 			flex: none
 			pointer-events: all
-			background: url("../img/ico-file-select.png") left 23px center no-repeat, #f8f8f8
-			size: 133px 67px
+			background: url("../img/ico-file-select.png") right 23px center no-repeat, transparent
+			// size: 133px 67px
 			margin: 0
 			font-size: 14px !important
-			color: #000
-			padding: 24px 20px 25px 58px
+			// color: #000
+			// padding: 24px 20px 25px 58px
 			cursor: pointer
 			margin-left: auto
 			transform: none !important
+
+	&__file
+		&-formats
+			order: 1
+			margin-top: 20px
+
+
+	&-input
+		&-cont
+			&--file
+				position: relative
+
+				+ .forms-input-cont--file
+					margin-top: 30px
+	// 			display: flex 
+	// 			flex-direction: column-reverse
+
+.clone--input
+	margin-top: 15px
 
 .top-label
 	width: 100%
@@ -642,6 +697,33 @@ div[id*="calendar_popup"]
 		+ .forms__checkbox-cont
 			margin-top: 0 !important
 
+#form_feedbackModal
+	.forms-wrap
+		display: flex
+		flex-wrap: wrap
+		margin: 0 0 -30px -30px
+		align-items: flex-start
+
+	.forms__input-cont
+		width: calc((100% - 30px * 2) / 2)
+		margin: 0 0 30px 30px
+.forms__error-message
+	&-icon
+		display: none !important
+
+	&:after
+		display: none !important
+
+#errorPopupfeedbackModal
+	padding: 30px !important
+
+	font.errortext
+		color: #000 !important
+		text-align: center
+		display: block
+
+.fancybox-close-small
+	z-index: 999 !important
 
 @media screen and (max-width: 660px)
 	.fancybox
@@ -714,3 +796,7 @@ div[id*="calendar_popup"]
 
 	.forms__input
 		padding: 40px 10px 13px 23px
+
+	#form_feedbackModal 
+		.forms-wrap
+			margin: 0 0 -30px 0

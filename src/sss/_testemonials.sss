@@ -76,6 +76,7 @@
 		justify-content: center
 		padding: 15px 25px
 		cursor: pointer
+		color: var(--main-color)
 
 	.slick
 		&-slide
@@ -115,6 +116,7 @@
 				padding: 15px 20px
 				display: block
 				cursor: pointer
+				color: var(--main-color)
 
 
 
@@ -357,6 +359,8 @@
 					left: auto
 
 	.testemonials
+		position: relative
+
 		&-nav
 			&__list
 				flex-direction: column
@@ -370,4 +374,18 @@
 			justify-content: flex-start
 			margin-top: 30px !important
 
+		&__list-cont
+			position: static
 
+		&-slider__arrow
+			top: -27px
+
+		&-slider
+			margin-top: 50px
+
+	.reviews-cont
+
+		.testemonials
+
+			&-slider__arrow
+				top: -7px

@@ -24,9 +24,11 @@
 
 @import "_footer.sss"
 
-
 #mapAll
 	max-width: 100%
+
+.grecaptcha-badge
+	display: none !important
 
 .ico
 	&-sale, &-info
@@ -128,6 +130,20 @@
 		flex-direction: column-reverse
 		margin: 0
 
+
+	.head__btn
+		display: block
+
+		.btn
+			display: block
+			padding: 15px
+			font-size: 1.13rem
+			font-weight: 700
+			border-radius: 0
+			background-color: transparent
+			border-bottom: 1px solid var(--main-color)
+
+
 	.h-city
 		position: relative
 
@@ -202,16 +218,16 @@
 		height: 100% !important
 
 
-	.slick
-		&-arrow
-			width: 30px
-			height: 30px
+	// .slick
+	// 	&-arrow
+	// 		width: 30px
+	// 		height: 30px
 
-		&-next
-			right: -13px
+	// 	&-next
+	// 		right: -13px
 
-		&-prev
-			left: -13px
+	// 	&-prev
+	// 		left: -13px
 
 	// #mapAll
 	// 	height: 100vh !important
