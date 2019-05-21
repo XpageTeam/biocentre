@@ -146,10 +146,14 @@
 			counter-increment: i
 			font-weight: bold
 			padding-left: 18px
+			position: relative
 
 			&:before
 				content: counter(i) "."
 				margin: 0 8px 0 -18px
+				position: absolute
+				top: 0
+				left: 18px
 
 			li
 				font-weight: 300

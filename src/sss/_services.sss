@@ -34,6 +34,12 @@
 		&__text
 			margin-bottom: 35px
 
+		&__btn
+			.btn 
+				margin-right: 20px
+				border: 1px solid var(--main-color) 
+
+
 	&-btn
 		position: relative
 		size: 40px
@@ -102,19 +108,58 @@
 		margin-bottom: 40px
 
 	&__price
-		padding: 20px 25px
-		border-radius: 5px
-		background: var(--main-color)
-		color: #fff
-		font-weight: bold
-		font-size: rem(25)
-		line-height: 1
+		display: flex
+		flex-direction: row-reverse
+		align-items: center
 		margin-bottom: 50px
+
+		.price
+			position: relative
+			border-radius: 5px
+			line-height: 1
+			color: #fff
+			padding: 20px 25px
+			background: var(--main-color)
+			font-size: rem(25)
+			font-weight: bold
+			margin-right: 20px
+
+		.old__price
+			position: relative
+			font-size: rem(20)
+			color: #ccc
+
+			&:before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 0
+				width: 100%
+				height: 1px
+				background: #ccc
+				transform: rotate(12deg)
+
+
+			+ .price
+				&:before 
+					content: '*'
+					position: absolute
+					top: 12px
+					right: 15px
+					color: #fff
+
+
+
+
+
+
 
 		&-label
 			font-size: rem(14)
 			color: #b2b5bd
 			margin-bottom: 15px
+
+
 	
 	.tabs-content.active
 		.services__content
@@ -166,8 +211,11 @@
 			margin-left: 30px
 
 		&__price
-			padding: 12px 18px
 			margin-bottom: 30px
+
+			.price
+				padding: 12px 18px
+
 
 
 @media screen and (max-width: 1000px)
@@ -269,3 +317,10 @@
 		&__content-title
 			font-size: 1rem
 			padding: 15px 30px 15px 0
+
+
+@media screen and (max-width: 370px)
+	
+	.services-info__btn
+		.btn + .btn 
+			margin-top: 20px

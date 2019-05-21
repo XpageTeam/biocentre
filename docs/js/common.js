@@ -21220,6 +21220,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         return is.string(string) && string === string.toLowerCase();
     };
 
+<<<<<<< HEAD
     // is a given string palindrome?
     is.palindrome = function(string) {
         if (is.not.string(string)) {
@@ -21234,6 +21235,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
         return true;
     };
+=======
+		$this.closest('.testemonials__item').toggleClass('js__open');
+
+		if (!(0, _jquery2.default)(this).data('status')) {
+			(0, _jquery2.default)(this).html('Свернуть');
+			(0, _jquery2.default)(this).data('status', true);
+		} else {
+			(0, _jquery2.default)(this).html('Развернуть');
+			(0, _jquery2.default)(this).data('status', false);
+		}
+
+		$this.closest('.testemonials__item').find('.testemonials__item-files').slideToggle();
+	});
+>>>>>>> task-2
 
     // is a given value space?
     // horizantal tab: 9, line feed: 10, vertical tab: 11, form feed: 12, carriage return: 13, space: 32
@@ -21343,6 +21358,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         return is.date(date) && date.getTime() < now.getTime();
     };
 
+<<<<<<< HEAD
     // is a given date in the parameter quarter?
     is.quarterOfYear = function(date, quarter) {
         return is.date(date) && is.number(quarter) && quarter === Math.floor((date.getMonth() + 3) / 3);
@@ -21356,6 +21372,41 @@ document.addEventListener("DOMContentLoaded", function (e) {
         var todayString = now.toDateString();
         return is.date(date) && date.toDateString() === todayString;
     };
+=======
+	var $testemonialsSlider = (0, _jquery2.default)(".testemonials-cont .testemonials__list").on('init', function (slick) {}).slick({
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		appendArrows: (0, _jquery2.default)('.testemonials-cont .testemonials-slider__arrow'),
+		// fade: true,
+		// arrows: false,
+		// lazyLoad: 'progressive',
+		autoplay: true,
+		adaptiveHeight: true,
+		responsive: [{
+			breakpoint: 660,
+			settings: {
+				slidesToShow: 1
+			}
+		}]
+	});
+
+	var $reviewsTestemonialsSlider = (0, _jquery2.default)(".reviews-cont .testemonials__list").on('init', function (slick) {}).slick({
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		appendArrows: (0, _jquery2.default)('.reviews-cont .testemonials-slider__arrow'),
+		// fade: true,
+		// arrows: false,
+		// lazyLoad: 'progressive',
+		autoplay: true,
+		adaptiveHeight: true,
+		responsive: [{
+			breakpoint: 660,
+			settings: {
+				slidesToShow: 1
+			}
+		}]
+	});
+>>>>>>> task-2
 
     // is a given date indicate tomorrow?
     is.tomorrow = function(date) {
@@ -21364,6 +21415,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         return is.date(date) && date.toDateString() === tomorrowString;
     };
 
+<<<<<<< HEAD
     // is a given date weekend?
     // 6: Saturday, 0: Sunday
     is.weekend = function(date) {
@@ -21372,6 +21424,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     // is a given date weekday?
     is.weekday = not(is.weekend);
+=======
+		$testemonialsSlider.slick('slickUnfilter');
+		$testemonialsSlider.slick('slickFilter', function (id, slide) {
+			var $slide = (0, _jquery2.default)(slide);
+			return +$slide.find("[data-id]").data("id") == value;
+			filtered = false;
+		});
+		console.log(11);
+	});
+
+	(0, _jquery2.default)('.reset-filter').click(function () {
+		(0, _jquery2.default)('.testemonials-nav input').prop('checked', false);
+		$testemonialsSlider.slick('slickUnfilter');
+	});
+>>>>>>> task-2
 
     // is a given dates year equal given year parameter?
     is.year = function(date, year) {

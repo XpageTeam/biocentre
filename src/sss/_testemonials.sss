@@ -145,6 +145,14 @@
 			box-shadow: 0px 0px 50px 8px rgba(37, 41, 77, 0.05)
 			border-color: transparent
 
+		&.js__open
+			.testemonials-btn
+				&:after
+					transform: rotate(180deg)
+
+
+
+
 
 
 		&.js__file--open
@@ -241,6 +249,7 @@
 			border-radius: 50%
 			background: url('../img/ico-arrow.png') no-repeat center
 			background-color: var(--main-color)
+			transition: transform .3s ease
 
 	
 
@@ -331,6 +340,7 @@
 				&-date
 					margin: 10px 0 0 0
 
+
 	.testemonials-slider
 
 		&__arrow
@@ -345,3 +355,19 @@
 					border-radius: 0
 					background: none
 					left: auto
+
+	.testemonials
+		&-nav
+			&__list
+				flex-direction: column
+
+			&__item
+				margin: 10px 0 0 0 !important
+				width: 100%
+				text-align: left
+
+		.reset-filter
+			justify-content: flex-start
+			margin-top: 30px !important
+
+
