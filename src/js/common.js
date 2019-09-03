@@ -120,6 +120,26 @@ document.addEventListener("DOMContentLoaded", e => {
 
 	});
 
+	let swiperMainSlider = new Swiper(".main-slider", {
+		effect: "fade",
+		slidesPerView: 1,
+		loop: true,
+		a11y: false,
+		roundLengths: true,
+		autoplay: {
+			delay: 3000,
+		},
+		 navigation: {
+	        nextEl: '.main-slider .swiper-button-next',
+	        prevEl: '.main-slider .swiper-button-prev',
+	      },
+	     fadeEffect: {
+		    crossFade: true
+		  },
+
+
+	});
+
 	let swiperServicesSlider = new Swiper(".services-slider .swiper-container", {
 		effect: "fade",
 		slidesPerView: 1,

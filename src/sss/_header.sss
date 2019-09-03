@@ -26,7 +26,10 @@
 			transition: transform .3s ease
 			z-index: 999
 
-
+.inner
+	.head
+		position: relative
+		background-color: var(--main-color)
 
 .logo
 	display: flex 
@@ -199,7 +202,7 @@
 		span
 			position: relative
 			display: inline-block
-			width: 40px
+			width: 30px
 			height: 2px
 			border-radius: 5px
 			vertical-align: bottom
@@ -257,10 +260,17 @@
 		
 		&__wrap
 			align-items: flex-start
+			flex-wrap: nowrap
+
+
+		.logo__white
+			max-width: 150px
+		.logo__color
+			max-width: 88px
 	
 	.logo
-		flex-direction: column
-		align-items: flex-start
+		align-items: center
 
 		img:not(:first-child)
-			margin: 10px 0 0 0
+			margin: 0 0 0 15px
+
