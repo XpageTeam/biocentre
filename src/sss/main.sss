@@ -22,12 +22,45 @@
 @import "_contacts.sss"
 @import "main-slider.sss"
 
-
 @import "_footer.sss"
 
-.page-content-page
+
+.loading
+	position: relative
+
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(255, 255, 255, 0.9)
+		background-image: url('../img/loader.svg')
+		background-position: center
+		z-index: 1
+		background-repeat: no-repeat
+		cursor: wait
+
+#wait_comp_ed8b4e5082ef74b31b40b6077a68bf4a
+	display: none !important
+	opacity: 0
+
+
+.wr-form-message
+	display: flex
+	align-items: center
+
+	.picture
+		max-width: 200px
+		margin-right: 20px
+
+.fancy-error
+	.forms
+		padding: 50px !important
+.inner
 	.content
-		padding: 50px 0
+		padding: 100px 0
 
 #mapAll
 	max-width: 100%
@@ -221,6 +254,11 @@
 	
 	#mapAllHide, #mapAll
 		height: 100% !important
+
+
+	.inner
+		.content
+			padding: 30px 0
 
 
 	// .slick

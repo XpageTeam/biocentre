@@ -3,8 +3,12 @@
 	background: #fff
 	padding: 70px 115px 90px
 	margin-top: -83px
-	z-index: 11
+	z-index: 200
 	margin-bottom: 89px
+
+
+
+	
 
 	&-form__label
 		margin-bottom: 10px
@@ -30,6 +34,10 @@
 
 		span 
 			color: var(--main-color)
+
+			&:nth-child(3)
+				b
+					color: #0996ac !important
 
 	&__middle
 		display: flex
@@ -121,9 +129,11 @@
 		&:nth-child(1)
 			background: var(--main-color)
 			color: #fff
+
 		&:nth-child(2)
 			border-color: var(--main-color)
 			color: var(--main-color)
+			display: none
 			
 
 	&__bot

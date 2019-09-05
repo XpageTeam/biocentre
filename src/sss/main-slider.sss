@@ -4,6 +4,14 @@
 .main-slider
 	position: relative
 
+	.swiper-wrapper
+		z-index: 50 !important
+
+	&:not(.swiper-container-initialized)
+		.swiper-slide
+			&:not(:first-child)
+				display: none !important
+
 	&:before
 		content: ''
 		display: block
@@ -15,13 +23,24 @@
 		background-image: url('../img/header-fade.png')
 		background-position: top left
 		background-repeat-x: repeat
-		z-index: 50
+		z-index: 90
 		pointer-events: none
 
 	&__slide
 		position: relative
 		display: block
 		background-color: var(--second-color)
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+			background-color: rgba(0, 0, 0, 0.3)
+
 
 		img
 			display: block
@@ -52,27 +71,44 @@
 					justify-content: center
 
 
+
 		&-title, &-btn
 			text-align: center
 
 			span
-				font-size: rem(41)
+				font-size: 48px
+				// font-size: 3.4em
 				font-weight: bold
 				color: #fff
-				background-color: var(--main-color)
+				background-color: rgba(255, 255, 255, 0.5)
 				display: inline
-				padding: 10px 0 12px
-				line-height: 1.5
-				box-shadow: 25px 0 0 var(--main-color), -25px 0 0 var(--main-color)
+				padding: 10px 0 4px
+				// line-height: 62px
+				// line-height: 1.31em
+				line-height: 1.3
+				box-shadow: 14px 0 0 rgba(255, 255, 255, 0.5), -14px 0 0 rgba(255, 255, 255, 0.5)
+				text-shadow: 0 0 20px rgba(0, 0, 0, 0.3)
+
+		&-title
+			span
+				text-transform: uppercase
 
 		&-btn
 			margin-top: 55px
+
+			span
+				background-color: transparent
+				box-shadow: none
+
+
+
 
 	&__arrow
 		position: absolute
 		top: calc(50% - 24px)
 		left: 0
 		right: 0
+		z-index: 200
 
 		.swiper-button
 			position: relative
@@ -81,7 +117,7 @@
 			right: auto
 			bottom: auto
 			size: 48px
-			background-color: var(--main-color)
+			background-color: #fff
 			background-image: none
 			border-radius: 50%
 			margin: 0
@@ -93,8 +129,8 @@
 				top: calc(50% - 4px)
 				left: calc(50% - 6px)
 				size: 8px
-				border-top: 1px solid #fff
-				border-right: 1px solid #fff
+				border-top: 1px solid #000
+				border-right: 1px solid #000
 				transform: rotate(45deg)
 
 
@@ -102,7 +138,7 @@
 
 		.wrapper
 			width: 100%
-			max-width: 1570px
+			max-width: 1870px
 			display: flex
 			justify-content: space-between
 
@@ -110,17 +146,61 @@
 .services-cont
 	display: none
 
+.main-slider__arrow
+	.wrapper
+		box-sizing: border-box
+
+.bx-mac
+
+	.main-slider
+
+		&__slide
+
+			&-title, &-btn
+
+				span
+					font-size: 48px
+					line-height:  1.68
+
+
+
+
+@media screen and (max-width: 1920px)
+	.main-slider
+
+		&__slide
+
+			&-title, &-btn
+
+				span
+					font-size: 48px
+					line-height: 1.3
+
 
 @media screen and (max-width: 1600px)
-	
+
 	.main-slider__arrow, .main-slider__slide-info-cont
 		.wrapper
 			box-sizing: border-box
+	
 
-@media screen and (max-width: 1500px)
+	.main-slider__slide-btn span, .main-slider__slide-title span 
+		font-size: 2.5rem
+		line-height: 1.35
+
+	.main-slider__arrow .wrapper
+		max-width: 1560px
+
+
+
+@media screen and (max-width: 1200px)
 	
 	.main-slider__slide-btn span, .main-slider__slide-title span
-		font-size: 2rem
+		font-size: 1.8rem
+		line-height: 1.5
+	
+// 	.main-slider__slide-btn span, .main-slider__slide-title span
+// 		font-size: 2rem
 
 
 @media screen and (max-width: 1000px)
@@ -132,13 +212,19 @@
 		max-width: 76%
 
 	.main-slider__slide-btn span, .main-slider__slide-title span
-		font-size: 1.6rem
 
 		br
 			display: none
 
 
 @media screen and (max-width: 660px)
+
+	.main-slider
+
+		&:before
+			display: none
+
+
 	.main-slider__slide img
 		height: auto
 
@@ -158,13 +244,31 @@
 
 		.wrapper
 			justify-content: flex-start
-			padding: 0 20px 0 55px
+			padding: 0 20px 0 45px
 
 		.swiper-button-next
 			margin-left: 20px
 
 	.main-slider__slide-btn span, .main-slider__slide-title span
-		box-shadow: 10px 0 0 var(--main-color),-10px 0 0 var(--main-color)
+		box-shadow: 10px 0 0 hsla(0,0%,100%,.5), -10px 0 0 hsla(0,0%,100%,.5)
 
 	.main-slider__slide-btn span, .main-slider__slide-title span
-		font-size: 20px
+		font-size: 19px
+		line-height: 1.75
+
+	.main-slider__arrow .swiper-button
+		width: 35px
+		height: 35px
+
+	.main-slider__slide-btn
+		margin-top: 35px
+
+		span
+			font-size: 15px !important
+			line-height: 1
+			box-shadow: none
+			text-shadow: none
+
+
+	.main-slider__slide img
+		height: calc(100vh - 80px)
