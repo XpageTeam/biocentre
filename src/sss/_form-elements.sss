@@ -215,6 +215,13 @@ div[id*="calendar_popup"]
 		background-position: right 26px center 
 		background-repeat: no-repeat
 
+		&[type="tel"]
+			&:hover
+				~ label
+					transform: translate3d(0,-12px,0)
+					font-size: 12px
+
+
 		&.forms__input--file 
 			&.js__have-content
 
