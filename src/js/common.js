@@ -288,6 +288,7 @@ document.addEventListener("DOMContentLoaded", e => {
 			// lazyLoad: 'progressive',
 			autoplay: true,
 			adaptiveHeight: true,
+			pauseOnHover: true,
 			responsive: [
 				{
 					breakpoint: 1200,
@@ -304,6 +305,11 @@ document.addEventListener("DOMContentLoaded", e => {
 				}
 			]
 	});
+
+	// $('.testemonials-btn').on('click', function () {
+	// 	$(".reviews-cont .testemonials__list").slickPause();
+		
+	// });
 
 	$('.testemonials-nav__link input[type="radio"]').on('change', function(){
 		let value = $(this).val();
@@ -353,7 +359,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
 	
 
-	if (!is.touchDevice()){
+	//if (!is.touchDevice()){
 		window.selectizeOpen = false;
 
 		$("select:not(.not-selectize)").selectize({
@@ -370,7 +376,7 @@ document.addEventListener("DOMContentLoaded", e => {
 					window.fullpage.setAllowScrolling(true)
 			}
 		})
-	}
+	//}
 
 	$(".fancybox").fancybox({
 		animationEffect: false,

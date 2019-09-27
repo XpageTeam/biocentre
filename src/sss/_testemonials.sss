@@ -184,6 +184,11 @@
 			.two
 				display: none
 
+				&[style="display: block;"]
+					display: inline !important
+
+
+
 			
 
 		&-title
@@ -243,6 +248,8 @@
 		transition: transform .3s ease, background .3s ease
 		display: flex
 		align-items: center
+		width: 144px
+		justify-content: space-between
 
 		&:after
 			content: ''

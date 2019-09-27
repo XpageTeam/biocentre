@@ -20605,6 +20605,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		// lazyLoad: 'progressive',
 		autoplay: true,
 		adaptiveHeight: true,
+		pauseOnHover: true,
 		responsive: [{
 			breakpoint: 1200,
 			settings: {
@@ -20618,6 +20619,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
 			}
 		}]
 	});
+
+	// $('.testemonials-btn').on('click', function () {
+	// 	$(".reviews-cont .testemonials__list").slickPause();
+
+	// });
 
 	(0, _jquery2.default)('.testemonials-nav__link input[type="radio"]').on('change', function () {
 		var value = (0, _jquery2.default)(this).val();
@@ -20658,22 +20664,22 @@ document.addEventListener("DOMContentLoaded", function (e) {
 		});
 	}
 
-	if (!_is_js2.default.touchDevice()) {
-		window.selectizeOpen = false;
+	//if (!is.touchDevice()){
+	window.selectizeOpen = false;
 
-		(0, _jquery2.default)("select:not(.not-selectize)").selectize({
-			onDropdownOpen: function onDropdownOpen() {
-				window.selectizeOpen = true;
+	(0, _jquery2.default)("select:not(.not-selectize)").selectize({
+		onDropdownOpen: function onDropdownOpen() {
+			window.selectizeOpen = true;
 
-				if (window.fullpage) window.fullpage.setAllowScrolling(false);
-			},
-			onDropdownClose: function onDropdownClose() {
-				window.selectizeOpen = false;
+			if (window.fullpage) window.fullpage.setAllowScrolling(false);
+		},
+		onDropdownClose: function onDropdownClose() {
+			window.selectizeOpen = false;
 
-				if (window.fullpage) window.fullpage.setAllowScrolling(true);
-			}
-		});
-	}
+			if (window.fullpage) window.fullpage.setAllowScrolling(true);
+		}
+	});
+	//}
 
 	(0, _jquery2.default)(".fancybox").fancybox({
 		animationEffect: false,
