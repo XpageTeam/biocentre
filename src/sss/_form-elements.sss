@@ -82,15 +82,25 @@ div[class*="big-form"]
 
 div:not([class*="big-form-"])
 
-#form_addServices
+#form_addServices, #form_addPackages
 	.forms-wrap
 		display: flex 
 		flex-wrap: wrap
 
 	.forms__input-cont
 		width: calc((100% - 30px * 2) / 2)
-		margin: 0 0 30px 30px
+		margin: 0 0 30
 
+#form_addPackages
+
+	.forms-wrap
+		display: flex 
+		flex-wrap: wrap
+		margin: 0 0 -30px -30px
+
+	.forms__input-cont
+		width: calc((100% - 30px * 2) / 2)
+		margin: 0 0 30px 30px
 
 .wr-block
 	display: flex 
