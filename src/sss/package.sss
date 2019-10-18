@@ -108,6 +108,22 @@
 			text-align: center
 			text-align: center
 			color: #4E4949
+			position: relative
+			// font-size: 14px
+			display: inline
+			// text-decoration: underline
+			border-bottom: 1px solid currentColor
+
+			&:after
+				content: ''
+				display: inline-block
+				size: 6px
+				border-right: 1px solid #000
+				border-top: 1px solid #000
+				transform: rotate(45deg)
+				margin-left: 10px
+				position: relative
+				top: -5px
 
 .package__services
 	margin: 30px
@@ -246,3 +262,24 @@
 	.package-faq__item
 		width: 100%
 		padding: 25px
+
+	.package__bot
+		text-align: left
+
+		a
+			position: relative
+			font-size: 14px
+			display: inline
+
+			&:after
+				content: ''
+				display: inline-block
+				size: 6px
+				border-right: 1px solid #000
+				border-top: 1px solid #000
+				transform: rotate(45deg)
+				margin-right: -10px
+				position: static
+
+
+
