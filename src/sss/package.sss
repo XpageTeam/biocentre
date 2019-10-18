@@ -1,0 +1,248 @@
+.package
+	padding-bottom: 60px
+
+	&__title
+		font-weight: bold
+		font-size: rem(30)
+		text-align: center
+		color: #4E4949
+		max-width: 530px
+		text-align: center
+		margin: 0 auto 75px
+
+		span
+			color: var(--main-color)
+
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 0 0 -20px -20px
+
+
+	&__item
+		width: calc((100% - 20px * 3) / 3)
+		margin: 0 0 20px 20px
+		background-color: #fff
+		display: flex
+		flex-direction: column
+		flex: 1 1 auto
+
+
+		&-top
+			background-color: var(--main-color)
+			color: #fff
+			font-weight: bold
+			font-size: rem(16)
+			padding: 10px
+			text-align: center
+
+		&-price
+			position: relative
+			background-color: #FF8F8A
+			color: #fff	
+			padding: 20px
+
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				bottom: -7px
+				left: calc(50% - 7px)
+				size: 14px
+				background-color: #FF8F8A
+				transform: rotate(45deg)
+
+
+			.price
+				font-weight: bold
+				font-size: rem(40)
+				text-align: center
+
+				span
+					font-weight: 500
+					font-size: rem(14)
+
+				&-info
+					font-weight: 500
+					font-size: em(13)
+					text-align: center
+					margin-top: 15px
+
+		&-elements
+			padding-top: 10px
+
+		&-el
+			padding: 20px 30px 20px 60px
+			background-repeat: no-repeat
+			background-position: top 20px left 30px
+			font-size: rem(13)
+
+			&:not(:last-child)
+				border-bottom: 1px solid #F5F7F9
+
+		&-btn
+			display: flex
+			justify-content: center
+			padding: 10px
+			margin-top: auto
+
+			.btn
+				padding: 18px 43px 17px
+
+
+		&-info
+			font-size: rem(12)
+			text-align: center
+			padding: 20px 25px 25px
+
+			span
+				color: var(--main-color)
+
+	&__bot
+		text-align: center
+		margin-top: 20px
+
+		a
+			font-weight: bold
+			font-size: rem(30)
+			text-align: center
+			text-align: center
+			color: #4E4949
+
+.package__services
+	margin: 30px
+	border: 1px solid #F3F3F3
+
+	&-top
+		background-color: #F5F7F9
+		font-size: rem(13)
+		padding: 20px
+
+		span
+			color: var(--main-color)
+			font-weight: bold
+
+	&-el
+		padding: 20px
+		display: flex
+
+		span
+			&:last-child
+				white-space: nowrap
+				font-weight: bold
+				font-size: 14px
+				margin-left: 20px
+
+		&:not(:last-child)
+			border-bottom: 1px solid #F3F3F3
+
+.package-faq
+	position: relative
+	padding: 25px 0 100px
+	background-color: #fff
+	margin-bottom: -100px
+
+
+	> *
+		z-index: 1
+		position: relative
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		width: 300vw
+		background-color: #fff
+		left: -50%
+		transform: translate3d(-50%,0,0)
+		
+	&__title
+		font-weight: bold
+		font-size: rem(30)
+		color: #4E4949
+		margin-bottom: 40px
+
+	&__text
+		max-width: 544px
+		line-height: 23px
+
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 40px 0 -20px -20px
+
+	&__item
+		width: calc((100% - 20px * 3) / 3)
+		margin: 0 0 20px 20px
+		border: 1px solid #EAEAEA
+		border-radius: 5px
+		padding: 50px 35px
+
+		figure
+			height: 56px
+			display: flex
+			align-items: center
+			margin-bottom: 25px
+
+	&__info
+		margin-top: 30px
+		max-width: 544px
+
+
+.page-package
+	.package__list
+		align-items: flex-start
+
+@media (max-width: 1200px)	
+
+	.package__title
+		margin: 0 auto 40px
+
+	.package__item-el
+		padding: 15px 15px 15px 45px
+		background-position: top 15px left 15px
+
+	.package__services-top
+		padding: 15px
+
+	.package__services-el
+		padding: 15px
+
+@media (max-width: 1000px)
+
+	.package__item
+		width: calc((100% - 60px)/2)
+
+	.package__title
+		font-size: 1.5rem
+		margin: 0 auto 25px
+
+	.package__bot a
+		font-size: 1.5rem
+
+	.package
+		padding-bottom: 25px
+
+	.package-faq__title
+		font-size: 1.5rem
+		margin-bottom: 25px
+
+	.package-faq__item
+		width: calc((100% - 60px)/2)
+
+	.package-faq
+		padding: 25px 0 30px
+
+
+@media (max-width: 667px)
+	
+	.package__item
+		width: 100%
+
+	.package-faq__item
+		width: 100%
+		padding: 25px

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Пакеты 2
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading.page-package
+		include inc/header.pug
+		main#content
+			.content
+				.wrapper
+					.package
+						.package__title Подберите <span>подходящий пакет</span> под ваши задачи
+
+						.package__list
+							.package__item
+								.package__item-top Свободный
+								.package__item-price
+									.price 0 ₽ 
+									.price-info Вы ничего не платите
+								.package__item-elements
+									.package__item-el(style="background-image: url('img/ico-arrow-circle.svg')")
+										b Профили анализов 
+										| для сдачи исходя из вашей цели
+									.package__item-el(style="background-image: url('img/ico-arrow-circle.svg')")
+										.text-page Более 10 доступных наборов
+									.package__item-el(style="background-image: url('img/ico-bonus.svg')")
+										.text-page Карта «Биоцентр» в подарок
+									.package__item-el(style="background-image: url('img/ico-sale.svg')")
+										.text-page 15% скидка на все исследования «Инвитро»
+								.package__item-btn
+									a(href="").btn.btn--color Выбрать
+								.package__item-info <span>*</span>Ведение электронной карты пациента в любом пакете — 3000 руб
+							.package__item
+								.package__item-top Комплексный
+								.package__item-price
+									.price <span>от</span> 1000 ₽
+									.price-info Оптимальный выбор
+								.package__item-elements
+									.package__item-el(style="background-image: url('img/ico-arrow-circle.svg')")
+										b Индивидуальный список анализов 
+										| после заполнения анкеты на сайте
+									.package__item-el(style="background-image: url('img/ico-arrow-circle.svg')")
+										.text-page Консультация эксперта по результатам исследований
+									.package__item-el(style="background-image: url('img/ico-bonus.svg')")
+										.text-page Карта «Биоцентр» в подарок
+									.package__item-el(style="background-image: url('img/ico-sale.svg')")
+										.text-page 15% скидка на все исследования «Инвитро»
+									.package__services
+										.package__services-top Вы можете <span>расширить программу</span> подключаемыми возможностями:
+										.package__services-el
+											span Программа питания на 2 недели 
+											span 3000 руб
+										.package__services-el
+											span Программа спецпитания (с подборкой БАДов)
+											span 3000 руб
+										.package__services-el
+											span Гигиена сна, двигательный режим и водно-солевой баланс 
+											span 3000 руб
+
+								.package__item-btn
+									a(href="").btn.btn--color Выбрать
+								.package__item-info <span>*</span>Ведение электронной карты пациента в любом пакете — 3000 руб
+							.package__item
+								.package__item-top VIP-пакет
+								.package__item-price 
+									.price <span>от</span> 4000 ₽
+									.price-info Полное сопровождение
+								.package__item-elements
+									.package__item-el(style="background-image: url('img/ico-arrow-circle.svg')")
+										b Индивидуальное сопровождение 
+										| до вашей цели после консультации (60мин)
+									.package__item-el(style="background-image: url('img/ico-arrow-circle.svg')")
+										.text-page 60-минутная вводная консультация эксперта для определения целей
+									.package__item-el(style="background-image: url('img/ico-arrow-circle.svg')")
+										.text-page Сбор анамнеза и разработка экспертом индивидуального списка исследований
+									.package__item-el(style="background-image: url('img/ico-arrow-circle.svg')")
+										.text-page Расширенная интерпретация результатов исследований
+									.package__item-el(style="background-image: url('img/ico-arrow-circle.svg')")
+										.text-page Разработка программы питания (с подборкой БАДов) и гигиены сна 
+									.package__item-el(style="background-image: url('img/ico-arrow-circle.svg')")
+										.text-page Повторная сдача анализов с 60-минутной консультацией врача и корректировкой ведения через 14 и 30 дней 
+									.package__item-el(style="background-image: url('img/ico-arrow-circle.svg')")
+										.text-page
+											b Поддержка и сопровождение 1 раз в квартал:
+											ul
+												li сдача анализов
+												li консультация с врачом
+												li коррекция питания
+												li коррекция двигательного режима
+												li оценка эффективности БАД
+									.package__item-el(style="background-image: url('img/ico-bonus.svg')") Карта «Биоцентр» в подарок
+									.package__item-el(style="background-image: url('img/ico-sale.svg')") 15% скидка на все исследования «Инвитро»
+									.package__services
+										.package__services-top Вы можете <span>расширить программу</span> подключаемыми возможностями:
+										.package__services-el
+											span Разработка плана спортивного развития на 3 месяца 
+											span 3000 руб
+								.package__item-btn
+									a(href="").btn.btn--color Выбрать
+								.package__item-info <span>*</span>Ведение электронной карты пациента в любом пакете — 3000 руб
+						.package__bot
+							a(href="") Полный список особенностей и сравнение пакетов
+					
+					.package-faq
+						.package-faq__title Нужно больше, чем VIP? 
+						.package-faq__text Предлагаем персональное ведение экспертами «Биоцентра». Предложение доступно после проработки пакета VIP.<br> Что включает предложение?
+
+						.package-faq__list
+							.package-faq__item
+								figure
+									img(src="img/ico-package-faq-1.svg", alt="")
+								.package-faq__item-text
+									.text-page
+										p 4 бесплатные консультации в месяц (одна консультация в неделю)
+							.package-faq__item
+								figure
+									img(src="img/ico-package-faq-2.svg", alt="")
+								.package-faq__item-text
+									.text-page
+										p Индивидуальная проработка с экспертом текущих вопросов:
+										ul
+											li консультации по пищевому поведению
+											li гигиена сна и суточного режима
+											li корректировка плана физической активности
+											li спортивные ориентиры и результаты
+											li корректировка движения к цели
+							.package-faq__item
+								figure
+									img(src="img/ico-package-faq-3.svg", alt="")
+								.package-faq__item-text
+									.text-page
+										p Стоимость пакета:
+										p 
+											| На 1 месяц — <b>50 000 руб</b><br>
+											| На 3 месяца — <b>135 000 руб</b><br>
+											| На год (по запросу) — <b>8000 руб</b>
+						.package-faq__info После индивидуального ведения в течение 3 месяцев, вам необходимо сдавать анализы раз в квартал, это две консультации по 60 мин.
+
+		include inc/footer.pug
+		include inc/scripts.pug
