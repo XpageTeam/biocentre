@@ -187,18 +187,18 @@ document.addEventListener("DOMContentLoaded", e => {
 	})
 
 
-	if($('body').hasClass('js__scroll')){
-		$("body").on('click', '[href*="#"]', function(e){
-			e.preventDefault();
-			$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - $('.head.js__show').innerHeight() }, 1000);
-		});
+	// if($('body').hasClass('js__scroll')){
+	// 	$("body").on('click', '[href*="#"]', function(e){
+	// 		e.preventDefault();
+	// 		$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - $('.head.js__show').innerHeight() }, 1000);
+	// 	});
 
-	} else {
-		$("body").on('click', '[href*="#"]', function(e){
-			e.preventDefault();
-			$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top}, 1000);
-		});
-	}
+	// } else {
+	// 	$("body").on('click', '[href*="#"]', function(e){
+	// 		e.preventDefault();
+	// 		$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top}, 1000);
+	// 	});
+	// }
 
 
 
@@ -347,13 +347,13 @@ document.addEventListener("DOMContentLoaded", e => {
 	$('.mobile-menu').append(socClone);
 
 
-	if($(window).width() < 1200){
-		$('.h-menu__link').click(function(e){
-			e.preventDefault();
+	// if($(window).width() < 1200){
+	// 	$('.h-menu__link').click(function(e){
+	// 		e.preventDefault();
 
-			$('body').removeClass('js__menu--open');
-		})
-	}
+	// 		$('body').removeClass('js__menu--open');
+	// 	})
+	// }
 
 
 
