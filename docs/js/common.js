@@ -20686,7 +20686,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 	(0, _jquery2.default)(".fancybox").fancybox({
 		animationEffect: false,
-		trapFocus: false,
+		trapFocus: true,
 		touch: false,
 		buttons: ["fullscreen", "slideShow", "close"],
 		keyboard: false,

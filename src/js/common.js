@@ -380,7 +380,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
 	$(".fancybox").fancybox({
 		animationEffect: false,
-		trapFocus: false,
+		trapFocus: true,
 		touch: false,
 		buttons: ["fullscreen", "slideShow", "close"],
 		keyboard: false,
