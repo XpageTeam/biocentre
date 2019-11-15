@@ -3,6 +3,7 @@ body.new
 		position: static
 		background-color: #fff
 		color: #000
+		padding: 27px 80px
 
 		.soc
 			&__link
@@ -240,6 +241,9 @@ body.new
 	.h-menu__item:not(:first-child)
 		margin-left: 20px
 
+	body.new .head
+		padding: 27px 20px
+
 @media screen and (max-width: 1200px)
 
 	.head__menu, .head__btn, .head__contacts, .head__soc
@@ -328,6 +332,7 @@ body.new
 			vertical-align: bottom
 			background: #fff
 			transition: background .2s .4s
+
 			&:before
 				border-radius: 5px
 				transform: none
@@ -340,6 +345,7 @@ body.new
 				background: #fff
 				transform-origin: 50% 50%
 				transition: top .3s .3s,transform .3s
+
 			&:after
 				border-radius: 5px
 				content: ""
@@ -366,6 +372,20 @@ body.new
 			transform: rotate3d(0,0,1,-45deg)
 			top: 0
 			transition: top .3s,transform .3s .5s
+
+	body.new
+		.burger 
+			span
+				background-color: #000
+
+				&:after, &:before
+					background-color: #000
+
+		&.js__menu--open
+
+			.burger>span
+				background: 0 0
+
 
 
 @media screen and (max-width: 1000px)

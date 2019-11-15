@@ -49,7 +49,11 @@
 		</header>
 		<div class="content">
 			<div class="banner">
-				<div class="banner__img"><img src="img/photos/banner-img.jpg" alt="" /></div>
+				<div class="banner__img">
+					<picture>
+						<source srcset="img/photos/banner-img.jpg" media="screen and (min-width: 700px)" data-main="data-main" />
+						<source srcset="img/photos/banner-img-m.jpg" media="screen and (max-width: 700px)" /><img /></picture>
+				</div>
 				<div class="banner__info-cont">
 					<div class="wrapper">
 						<div class="banner__info">
@@ -138,50 +142,49 @@
 			<div class="profiles-cont">
 				<div class="wrapper">
 					<div class="profiles">
-						<div class="profiles__title">
-							<div class="tabs">
-								<div class="tabs__left">
-									<div class="tabs__tab active" data-id="1">Активным и занятым</div>
-									<div class="tabs__tab" data-id="2">Сезонные простудные заболевания</div>
-									<div class="tabs__tab" data-id="3">Сердце – главный орган</div>
-									<div class="tabs__tab" data-id="4">Здоровое пищеварение</div>
-									<div class="tabs__tab" data-id="5">Коррекция метаболизма</div>
-									<div class="tabs__tab" data-id="6">Здоровая печень</div>
-									<div class="tabs__tab" data-id="7">Гормональный баланс</div>
-									<div class="tabs__tab" data-id="8">Спорт для начинающих</div>
-									<div class="tabs__tab" data-id="9">Активное долголетие 50+</div>
-								</div>
-								<div class="tabs__content active" data-id="1">
-									<div class="profiles__img"><img src="img/photos/profiles-1.jpg" alt="" /></div>
-									<div class="profiles__title">Активным и занятым</div>
-									<div class="profiles__text">
-										<div class="text-page">
-											<p>В современном ритме жизни не всегда находится время посетить кабинет доктора. Такой подход повышает вероятность развития заболеваний, которые можно избежать при своевременной проверке функций печени, почек, системы пищеварения и гормональной системы. Цель данного профиля - это оценка состояния основных органов и выявления рисков возникновения заболеваний</p>
-											<p>Подходит для тех, кто: </p>
-											<ul>
-												<li>много работает и мало занимается спортом</li>
-												<li>питается несбалансированно и несвоевременно</li>
-												<li>чувствует снижение активности, работоспособности и мозговой деятельности</li>
-											</ul>
-										</div>
-									</div>
-									<div class="profiles__footer">
-										<div class="profiles__footer-info">
-											<div class="profiles__footer-top">Готовность до двух суток</div>
-											<div class="profiles__footer-bot">15 490руб. - 15%= 13 170 руб.</div>
-										</div>
-										<div class="profiles__footer-btn"><a class="btn" href="#">Оставить заявку</a></div>
-									</div>
-								</div>
-								<div class="tabs__content" data-id="2"></div>
-								<div class="tabs__content" data-id="3"></div>
-								<div class="tabs__content" data-id="4"></div>
-								<div class="tabs__content" data-id="5"></div>
-								<div class="tabs__content" data-id="6"></div>
-								<div class="tabs__content" data-id="7"></div>
-								<div class="tabs__content" data-id="8"></div>
-								<div class="tabs__content" data-id="9"></div>
+						<div class="profiles-title">Профили</div>
+						<div class="tabs">
+							<div class="tabs__left">
+								<div class="tabs-tab active" data-id="1">Активным и занятым</div>
+								<div class="tabs-tab" data-id="2">Сезонные простудные заболевания</div>
+								<div class="tabs-tab" data-id="3">Сердце – главный орган</div>
+								<div class="tabs-tab" data-id="4">Здоровое пищеварение</div>
+								<div class="tabs-tab" data-id="5">Коррекция метаболизма</div>
+								<div class="tabs-tab" data-id="6">Здоровая печень</div>
+								<div class="tabs-tab" data-id="7">Гормональный баланс</div>
+								<div class="tabs-tab" data-id="8">Спорт для начинающих</div>
+								<div class="tabs-tab" data-id="9">Активное долголетие 50+</div>
 							</div>
+							<div class="tabs-content active" data-id="1">
+								<div class="profiles__img"><img src="img/photos/profiles-1.jpg" alt="" /></div>
+								<div class="profiles__title">Активным и занятым</div>
+								<div class="profiles__text">
+									<div class="text-page">
+										<p>В современном ритме жизни не всегда находится время посетить кабинет доктора. Такой подход повышает вероятность развития заболеваний, которые можно избежать при своевременной проверке функций печени, почек, системы пищеварения и гормональной системы. Цель данного профиля - это оценка состояния основных органов и выявления рисков возникновения заболеваний</p>
+										<p>Подходит для тех, кто: </p>
+										<ul>
+											<li>много работает и мало занимается спортом</li>
+											<li>питается несбалансированно и несвоевременно</li>
+											<li>чувствует снижение активности, работоспособности и мозговой деятельности</li>
+										</ul>
+									</div>
+								</div>
+								<div class="profiles__footer">
+									<div class="profiles__footer-info">
+										<div class="profiles__footer-top">Готовность до двух суток</div>
+										<div class="profiles__footer-bot">15 490руб. - 15%= 13 170 руб.</div>
+									</div>
+									<div class="profiles__footer-btn"><a class="btn" href="#">Оставить заявку</a></div>
+								</div>
+							</div>
+							<div class="tabs-content" data-id="2"></div>
+							<div class="tabs-content" data-id="3"></div>
+							<div class="tabs-content" data-id="4"></div>
+							<div class="tabs-content" data-id="5"></div>
+							<div class="tabs-content" data-id="6"></div>
+							<div class="tabs-content" data-id="7"></div>
+							<div class="tabs-content" data-id="8"></div>
+							<div class="tabs-content" data-id="9"></div>
 						</div>
 					</div>
 				</div>

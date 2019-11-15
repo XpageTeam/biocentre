@@ -1,3 +1,25 @@
+body.new
+	.club-card
+		margin-top: 0
+		background-color: var(--second-color)
+		padding: 70px 80px 90px
+
+		&__cont
+			background-color: #fff
+
+		&__title
+			text-align: left
+
+		&__text
+			text-align: left
+
+		&-form__input
+			background-color: #fff
+
+		&__bot
+			display: none
+
+
 .club-card
 	position: relative
 	background: #fff
@@ -5,10 +27,6 @@
 	margin-top: -83px
 	z-index: 200
 	margin-bottom: 89px
-
-
-
-	
 
 	&-form__label
 		margin-bottom: 10px
@@ -238,6 +256,9 @@
 
 				a
 					font-size: .9rem
+
+	body.new .club-card
+		padding: 25px
 
 @media screen and (max-width: 660px)
 

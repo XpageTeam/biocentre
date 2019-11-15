@@ -33599,8 +33599,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 			$parent.find(".tabs-tab.active, .tabs-content.active").removeClass("active");
 			$this.addClass("active");
 			$parent.find(".tabs-content[data-id='" + id + "']").addClass("active");
-
-			(0, _jquery2.default)('html, body').animate({ scrollTop: (0, _jquery2.default)(".tabs-content[data-id='" + id + "']").offset().top - (0, _jquery2.default)('.head.js__show').innerHeight() - 20 }, 500);
+			if ((0, _jquery2.default)(window).width() > 667) {
+				(0, _jquery2.default)('html, body').animate({ scrollTop: (0, _jquery2.default)(".tabs-content[data-id='" + id + "']").offset().top - (0, _jquery2.default)('.head.js__show').innerHeight() - 20 }, 500);
+			}
 		} else {
 			$parent.find(".tabs-tab.active, .tabs-content.active").removeClass("active");
 		}

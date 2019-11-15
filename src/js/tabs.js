@@ -13,8 +13,9 @@ $(e => {
 			$parent.find(".tabs-tab.active, .tabs-content.active").removeClass("active");
 			$this.addClass("active");
 			$parent.find(`.tabs-content[data-id='${id}']`).addClass("active");
-
-			$('html, body').animate({ scrollTop: $(`.tabs-content[data-id='${id}']`).offset().top - $('.head.js__show').innerHeight() - 20}, 500)
+			if($(window).width() > 667){
+				$('html, body').animate({ scrollTop: $(`.tabs-content[data-id='${id}']`).offset().top - $('.head.js__show').innerHeight() - 20}, 500)
+			}
 		}else{
 			$parent.find(".tabs-tab.active, .tabs-content.active").removeClass("active");
 		}

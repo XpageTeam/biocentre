@@ -12,7 +12,10 @@ html(lang="ru")
 			.content
 				.banner
 					.banner__img
-						img(src="img/photos/banner-img.jpg", alt="")
+						picture
+							source(srcset="img/photos/banner-img.jpg" media="screen and (min-width: 700px)" data-main="data-main")
+							source(srcset="img/photos/banner-img-m.jpg" media="screen and (max-width: 700px)") 
+							img
 					.banner__info-cont
 						.wrapper
 							.banner__info
@@ -102,48 +105,48 @@ html(lang="ru")
 				.profiles-cont
 					.wrapper
 						.profiles
-							.profiles__title
-								.tabs
-									.tabs__left
-										.tabs__tab.active(data-id="1") Активным и занятым
-										.tabs__tab(data-id="2") Сезонные простудные заболевания
-										.tabs__tab(data-id="3") Сердце – главный орган
-										.tabs__tab(data-id="4") Здоровое пищеварение
-										.tabs__tab(data-id="5") Коррекция метаболизма
-										.tabs__tab(data-id="6") Здоровая печень
-										.tabs__tab(data-id="7") Гормональный баланс
-										.tabs__tab(data-id="8") Спорт для начинающих
-										.tabs__tab(data-id="9") Активное долголетие 50+
-									.tabs__content.active(data-id="1")
-										.profiles__img
-											img(src="img/photos/profiles-1.jpg", alt="")
-										.profiles__title Активным и занятым
-										.profiles__text
-											.text-page
-												p В современном ритме жизни не всегда находится время посетить кабинет доктора. Такой подход повышает вероятность развития заболеваний, которые можно избежать при своевременной проверке функций печени, почек,  системы пищеварения и гормональной системы. Цель данного профиля - это оценка состояния основных органов и выявления рисков возникновения заболеваний
+							.profiles-title Профили
+							.tabs
+								.tabs__left
+									.tabs-tab.active(data-id="1") Активным и занятым
+									.tabs-tab(data-id="2") Сезонные простудные заболевания
+									.tabs-tab(data-id="3") Сердце – главный орган
+									.tabs-tab(data-id="4") Здоровое пищеварение
+									.tabs-tab(data-id="5") Коррекция метаболизма
+									.tabs-tab(data-id="6") Здоровая печень
+									.tabs-tab(data-id="7") Гормональный баланс
+									.tabs-tab(data-id="8") Спорт для начинающих
+									.tabs-tab(data-id="9") Активное долголетие 50+
+								.tabs-content.active(data-id="1")
+									.profiles__img
+										img(src="img/photos/profiles-1.jpg", alt="")
+									.profiles__title Активным и занятым
+									.profiles__text
+										.text-page
+											p В современном ритме жизни не всегда находится время посетить кабинет доктора. Такой подход повышает вероятность развития заболеваний, которые можно избежать при своевременной проверке функций печени, почек,  системы пищеварения и гормональной системы. Цель данного профиля - это оценка состояния основных органов и выявления рисков возникновения заболеваний
 
-												p Подходит для тех, кто: 
-												ul
-													li много работает и мало занимается спортом
-													li питается несбалансированно и несвоевременно
-													li чувствует снижение активности, работоспособности и мозговой деятельности
-										.profiles__footer
-											.profiles__footer-info
-												.profiles__footer-top Готовность до двух суток
-												.profiles__footer-bot 15 490руб. - 15%= 13 170 руб.
+											p Подходит для тех, кто: 
+											ul
+												li много работает и мало занимается спортом
+												li питается несбалансированно и несвоевременно
+												li чувствует снижение активности, работоспособности и мозговой деятельности
+									.profiles__footer
+										.profiles__footer-info
+											.profiles__footer-top Готовность до двух суток
+											.profiles__footer-bot 15 490руб. - 15%= 13 170 руб.
 
-											.profiles__footer-btn
-												a(href="#").btn Оставить заявку
+										.profiles__footer-btn
+											a(href="#").btn Оставить заявку
 
 
-									.tabs__content(data-id="2")
-									.tabs__content(data-id="3")
-									.tabs__content(data-id="4")
-									.tabs__content(data-id="5")
-									.tabs__content(data-id="6")
-									.tabs__content(data-id="7")
-									.tabs__content(data-id="8")
-									.tabs__content(data-id="9")
+								.tabs-content(data-id="2")
+								.tabs-content(data-id="3")
+								.tabs-content(data-id="4")
+								.tabs-content(data-id="5")
+								.tabs-content(data-id="6")
+								.tabs-content(data-id="7")
+								.tabs-content(data-id="8")
+								.tabs-content(data-id="9")
 
 				.testemonials-cont#3
 					.wrapper
