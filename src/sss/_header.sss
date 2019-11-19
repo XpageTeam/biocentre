@@ -1,4 +1,18 @@
+.btn.mobile
+	display: none
+
 body.new
+
+	.h-menu--top
+		.h-menu__link
+			font-weight: bold
+
+	.head__wrap--bot
+		.h-menu__link
+			font-size: rem(13)
+			color: #a2a2a2
+			font-weight: 400 !important
+
 	.head
 		position: static
 		background-color: #fff
@@ -27,6 +41,7 @@ body.new
 				display: flex
 				justify-content: space-between
 				width: 100%
+				align-items: center
 
 			&--top
 				border-bottom: 1px solid #EFEFEF
@@ -40,15 +55,18 @@ body.new
 					font-size: rem(15)
 					padding: 30px 0 41px
 
-		&__contacts-phones
-			text-align: right
-			display: flex
+		&__contacts
+			flex-direction: row
 
-			address
-				&:not(:first-child)
-					margin-left: 18px
-					padding-left: 18px
-					border-left: 1px solid #000
+			&-phones
+				text-align: right
+				display: flex
+
+				address
+					&:not(:first-child)
+						margin-left: 18px
+						padding-left: 18px
+						border-left: 1px solid #000
 
 		.h-city
 			margin-bottom: 0
@@ -73,7 +91,7 @@ body.new
 				padding: 18px 28px 17px
 
 		.h-menu__item:not(:first-child)
-			margin-left: 50px
+			margin-left: 35px
 
 .head
 	position: absolute
@@ -82,12 +100,15 @@ body.new
 	width: 100%
 	padding: 40px 80px
 	z-index: 300 !important
+	color: #fff
 
 
 
 	&__contacts
 		display: flex
 		align-items: center
+		flex-direction: column
+		align-items: flex-end
 
 	.h-city
 		position: relative
@@ -186,12 +207,11 @@ body.new
 			margin-left: 25px
 
 
+
 .h-menu
 	display: flex
-	&--top
-		.h-menu__link
-			font-size: rem(13)
-			color: #a2a2a2
+
+		
 	&__item
 
 		position: relative
@@ -421,6 +441,13 @@ body.new
 		.option
 			padding: 5px 0
 
+		.btn.desktop
+			display: none !important
+		.btn.mobile
+			&:hover
+				background-color: #fff !important
+				color: var(--main-color) !important
+
 
 	.burger
 		position: relative
@@ -517,6 +544,21 @@ body.new
 	
 @media screen and (max-width: 660px)
 
+	body.new
+		.head--right
+			flex: 1 1 auto
+
+			.head__btn
+				margin: 0 auto
+
+	.btn
+		&.desktop
+			display: none
+
+		&.mobile
+			display: block
+			margin: 0 auto
+
 	.head
 		padding: 20px
 		
@@ -554,6 +596,8 @@ body.new
 
 		.head
 			padding: 10px 20px
+
+
 
 @media screen and (max-width: 370px)
 	

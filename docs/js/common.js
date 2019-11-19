@@ -20538,6 +20538,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	// }
 
 
+	(0, _jquery2.default)("body").on('click', '.profil', function (e) {
+		(0, _jquery2.default)('html,body').stop().animate({ scrollTop: (0, _jquery2.default)(".profiles-cont").offset().top }, 1000);
+	});
+
 	if ((0, _jquery2.default)(".security-stat__num").length) {
 		(0, _jquery2.default)(".security-stat__num").countTo();
 	}
@@ -33595,10 +33599,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		var id = $this.attr("data-id"),
 		    $parent = $this.closest(".tabs");
 
+		if ($this.hasClass("active")) return;
+
 		if (!$this.hasClass("active")) {
 			$parent.find(".tabs-tab.active, .tabs-content.active").removeClass("active");
 			$this.addClass("active");
 			$parent.find(".tabs-content[data-id='" + id + "']").addClass("active");
+
 			if ((0, _jquery2.default)(window).width() > 667) {
 				(0, _jquery2.default)('html, body').animate({ scrollTop: (0, _jquery2.default)(".tabs-content[data-id='" + id + "']").offset().top - (0, _jquery2.default)('.head.js__show').innerHeight() - 20 }, 500);
 			}

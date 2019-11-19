@@ -202,6 +202,10 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 
+		$("body").on('click', '.profil', function(e){
+			$('html,body').stop().animate({ scrollTop: $(".profiles-cont").offset().top }, 1000);
+		});
+
 
 	if ($(".security-stat__num").length){
 		$(".security-stat__num").countTo();
