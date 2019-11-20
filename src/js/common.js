@@ -27,11 +27,15 @@ let scrollTimeout;
 document.addEventListener("DOMContentLoaded", e => {
 
 
-	$("body").on("change", ".forms__input-calendar input", function(e){
+	$("body").on("change", ".forms__input-calendar input, .user_type input", function(e){
 
 		var inputHasFile = $(this).val();
+
 		if(inputHasFile.length){
-			$(this).closest('.forms__input-calendar').addClass('js__have-content');
+			$(this).closest('.forms__input-calendar, .user_type').addClass('js__have-content');
+		} else {
+			$(this).closest('.forms__input-calendar, .user_type').removeClass('js__have-content');
+
 		}
 
 	});
@@ -344,10 +348,12 @@ document.addEventListener("DOMContentLoaded", e => {
 	var contactsClone = $('.head__contacts').clone();
 	var socClone = $('footer .soc').clone();
 	var btnClone = $('.head .head__btn').clone();
+	var phoneClone = $('.head .head__contacts-phones .h-phone').clone();
 
 	$('.mobile-menu').append(contactsClone);
 	$('.mobile-menu').append(btnClone);
 	$('.mobile-menu').append(menuClone);
+	$('.mobile-menu').append(phoneClone);
 	$('.mobile-menu').append(socClone);
 
 

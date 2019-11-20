@@ -20374,11 +20374,14 @@ var scrollTimeout = void 0;
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
-	(0, _jquery2.default)("body").on("change", ".forms__input-calendar input", function (e) {
+	(0, _jquery2.default)("body").on("change", ".forms__input-calendar input, .user_type input", function (e) {
 
 		var inputHasFile = (0, _jquery2.default)(this).val();
+
 		if (inputHasFile.length) {
-			(0, _jquery2.default)(this).closest('.forms__input-calendar').addClass('js__have-content');
+			(0, _jquery2.default)(this).closest('.forms__input-calendar, .user_type').addClass('js__have-content');
+		} else {
+			(0, _jquery2.default)(this).closest('.forms__input-calendar, .user_type').removeClass('js__have-content');
 		}
 	});
 
@@ -20656,10 +20659,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	var contactsClone = (0, _jquery2.default)('.head__contacts').clone();
 	var socClone = (0, _jquery2.default)('footer .soc').clone();
 	var btnClone = (0, _jquery2.default)('.head .head__btn').clone();
+	var phoneClone = (0, _jquery2.default)('.head .head__contacts-phones .h-phone').clone();
 
 	(0, _jquery2.default)('.mobile-menu').append(contactsClone);
 	(0, _jquery2.default)('.mobile-menu').append(btnClone);
 	(0, _jquery2.default)('.mobile-menu').append(menuClone);
+	(0, _jquery2.default)('.mobile-menu').append(phoneClone);
 	(0, _jquery2.default)('.mobile-menu').append(socClone);
 
 	// if($(window).width() < 1200){

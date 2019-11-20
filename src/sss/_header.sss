@@ -89,6 +89,7 @@ body.new
 		&__btn
 			.btn
 				padding: 18px 28px 17px
+				background-color: #E42B23
 
 		.h-menu__item:not(:first-child)
 			margin-left: 35px
@@ -311,6 +312,25 @@ body.new
 .head__burger
 	display: none
 
+@media screen and (max-width: 1800px)
+	body.new 
+		.head .h-menu__item:not(:first-child)
+			margin-left: 20px
+
+		.head--middle
+			max-width: 744px
+
+		.head .h-city .selectize-input
+			background-position: 0 0
+
+
+@media screen and (max-width: 1700px)
+	
+	body.new 
+		.head--middle
+			max-width: 685px
+
+
 @media screen and (max-width: 1600px)
 	
 	.head
@@ -329,9 +349,10 @@ body.new
 		.head
 			padding: 0 20px
 
+		.head__soc
+			margin-left: 25px
 
-		.head--middle
-			max-width: 770px
+
 
 @media screen and (max-width: 1500px)
 	
@@ -601,7 +622,11 @@ body.new
 
 @media screen and (max-width: 370px)
 	
-	body.new .head__btn .btn
-		padding: 11px
+	body.new 
+		.head__btn .btn
+			padding: 11px
+
+		.head--right
+			padding-left: 10px
 
 

@@ -18,6 +18,12 @@ div[class*="big-form"]
 		float: right
 		top: 0
 		z-index: 15
+div[id^="modal-profiles-"]
+	padding: 50px !important
+	max-width: 680px
+
+// .forms
+// 	width: 920px !important
 
 .popup-form
 	display: none
@@ -82,7 +88,7 @@ div[class*="big-form"]
 
 div:not([class*="big-form-"])
 
-#form_addServices, #form_addPackages
+#form_addServices, #form_addPackages, #registrCard, #participation-modal
 	.forms-wrap
 		display: flex 
 		flex-wrap: wrap
@@ -91,7 +97,8 @@ div:not([class*="big-form-"])
 		width: calc((100% - 30px * 2) / 2)
 		margin: 0 0 30px 30px
 
-#form_addPackages
+
+#form_addPackages, #registrCard, #participation-modal
 
 	.forms-wrap
 		display: flex 
@@ -159,7 +166,8 @@ div:not([class*="big-form-"])
 	&__label
 		cursor: pointer
 		display: flex
-		align-items: flex-start
+		// align-items: flex-start
+		align-items: center
 		position: relative
 		user-select: none
 
@@ -204,16 +212,63 @@ div:not([class*="big-form-"])
 div[id*="calendar_popup"]
 	z-index: 999999 !important
 
+.user_type
+
+	&.js__have-content, &:focus
+
+		~ label
+			transform: translate3d(0, -10px, 0)
+			font-size: 10px
+
+	input
+		border: 1px solid transparent
+		padding: 31px 10px 13px 23px
+		height: 67px
+		transition: border-color .3s ease, background-color .3s ease
+		width: 100%
+		background-color: #f8f8f8
+		background-position: right 26px center 
+		background-repeat: no-repeat
+		background-image: url('../img/ico-calendar.svg')
+
+		+ img
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			opacity: 0
+			size: 100%
+
+
+
+
+
+
+
+
 .forms
 	max-height: calc(100vh - 100px)
+
+	&__title
+		margin-top: 30px
+		margin-bottom: 20px
+		font-size: 	rem(20)
+
 
 	&__submit
 		text-align: center
 		margin: 70px 0 0
 
+	&-bot
+		+ .forms-wrap--middle
+			margin-top: 20px
+
 
 	&__req
 		margin: 40px 0 0
+
+
 
 	&__input
 		border: 1px solid transparent
@@ -233,6 +288,7 @@ div[id*="calendar_popup"]
 
 
 		&.forms__input--file 
+
 			&.js__have-content
 
 				~ 
@@ -251,13 +307,17 @@ div[id*="calendar_popup"]
 			&-support
 				padding: 18px 50px 13px 23px
 
+
+
 			&:focus
 
 				~ 
 					.forms__label--file
 						font-size: 0 !important
+
 					.forms__input
 						padding: 18px 10px 13px 23px
+
 
 		&-calendar
 
@@ -301,16 +361,21 @@ div[id*="calendar_popup"]
 			color: var(--main-color) !important
 
 
+			~ .forms__input--file-support
+				background-color: #ffe7e7!important
+				border-color: red
+
+
 			&:not(:valid)
 				border-color: red
 
 				~ .forms__error-message
 					opacity: 1
 
-				&:focus
+				// &:focus
 
-				~ .forms__error-message
-					opacity: 0
+				// ~ .forms__error-message
+				// 	opacity: 0
 
 
 		&::-webkit-input-placeholder
@@ -373,11 +438,15 @@ div[id*="calendar_popup"]
 
 		&--select
 			padding: 0 30px 0 25px
-			background: url("../img/ico-select-arrow-black.png") right 18px center no-repeat, #f8f8f8
+			background: url("../img/ico-select-arrow-black.svg") right 18px center no-repeat, #f8f8f8
 
 			&.selectize-control
 				padding: 0
 				margin-left: 30px
+
+			
+			~ .forms__label
+				opacity: 0
 
 
 			.selectize
@@ -412,7 +481,7 @@ div[id*="calendar_popup"]
 
 							&.active
 								background: var(--second-color)		
-
+		
 		&-cont
 			display: flex
 			flex-direction: column
@@ -541,8 +610,12 @@ div[id*="calendar_popup"]
 
 				+ .forms-input-cont--file
 					margin-top: 30px
-	// 			display: flex 
-	// 			flex-direction: column-reverse
+
+.forms__input
+	&:valid
+		~ .forms__label
+			transform: translate3d(0,-12px,0)
+			font-size: 12px
 
 .clone--input
 	margin-top: 15px
@@ -719,6 +792,7 @@ div[id*="calendar_popup"]
 			margin-top: 0 !important
 
 #form_feedbackModal
+
 	.forms-wrap
 		display: flex
 		flex-wrap: wrap
@@ -728,7 +802,20 @@ div[id*="calendar_popup"]
 	.forms__input-cont
 		width: calc((100% - 30px * 2) / 2)
 		margin: 0 0 30px 30px
+
+	.forms__checkbox-cont
+		width: 100% !important
+		margin: 0 0 30px 30px
+		display: flex
+		flex-wrap: wrap
+
+		.checkbox
+			margin: 0 23px 15px 0
+
+
+
 .forms__error-message
+
 	&-icon
 		display: none !important
 
@@ -818,6 +905,24 @@ div[id*="calendar_popup"]
 	.forms__input
 		padding: 40px 10px 13px 23px
 
-	#form_feedbackModal, #form_addPackages
+
+
+	#form_feedbackModal, #form_addPackages, #registrCard, #participation-modal
 		.forms-wrap
 			margin: 0 0 -30px 0
+
+	#registrCard, #participation-modal
+		.forms-wrap
+			margin: 0
+
+		.forms__input--select
+			padding: 0 23px
+
+	#form_feedbackModal
+		.forms__title
+			margin-top: 50px
+
+
+		.forms__checkbox-cont
+			margin: 0 0 30px 0
+			flex-direction: column
