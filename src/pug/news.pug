@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Новости
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.new.loading
+		include inc/header.pug
+		main#content
+			.inner-content__title-cont
+				.wrapper
+					.inner-content__title
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Биоцентр
+									span.bread-crumbs__this Новости
+							.title-block__title
+								h1 Новости
+			.content
+				.wrapper
+					.news
+						.news__list
+							- for (let j = 0; j < 6; j++)
+								- for (let i = 0; i < 3; i++)
+									a(href="#").news__item
+										figure.news__item-img
+											img(src="img/photos/news-"+(1+i)+".jpg", alt="")
+										.news__item-info
+											.news__item-title Получите компетентного партнера в сфере управления здоровьем и улучшения качества жизни.
+											.news__item-bot
+												.btn
+												.news__item-date 4 ноября 2019
+
+
+
+							
+								
+		include inc/footer.pug
+		include inc/scripts.pug
