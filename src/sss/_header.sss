@@ -1,24 +1,120 @@
+.btn.mobile
+	display: none
+
 body.new
+
+	.h-menu--top
+		.h-menu__link
+			font-weight: bold
+
+	.head__wrap--bot
+		.h-menu__link
+			font-size: rem(13)
+			color: #a2a2a2
+			font-weight: 400 !important
+
+
 	.head
 		position: static
 		background-color: #fff
 		color: #000
 
+		padding: 0 80px
+>>>>>>> task-page-new
+
 		.soc
 			&__link
 				background-color: var(--main-color)
+
+
+		&--right
+			display: flex
+			align-items: center
+
+		&--middle
+			max-width: 880px
+			width: 100%
+
+		&__wrap
+
+			width: 100%
+			max-width: 1920px
+			margin: 0 auto
+
+			&--top, &--bot
+				display: flex
+				justify-content: space-between
+				width: 100%
+				align-items: center
+
+			&--top
+				border-bottom: 1px solid #EFEFEF
+
+			&--bot
+				display: flex
+				align-items: center
+
+				.h-menu__link
+					font-weight: 600
+					font-size: rem(15)
+					padding: 30px 0 41px
+
+		&__contacts
+			flex-direction: row
+
+			&-phones
+				text-align: right
+				display: flex
+
+				address
+					&:not(:first-child)
+						margin-left: 18px
+						padding-left: 18px
+						border-left: 1px solid #000
+
+		.h-city
+			margin-bottom: 0
+
+			.selectize-input
+				border: 0
+				box-shadow: none
+				padding-left: 30px
+				background-image: url('../img/ico-location.svg')
+				background-repeat: no-repeat
+				background-position: 0 4px
+				display: flex
+
+				> *
+					line-height: 1
+
+		&__soc
+			margin-left: 60px
+
+		&__btn
+			.btn
+				padding: 18px 28px 17px
+				background-color: #E42B23
+
+		.h-menu__item:not(:first-child)
+			margin-left: 35px
+
 
 .head
 	position: absolute
 	top: 0
 	left: 0
 	width: 100%
-	padding: 40px 83px
+
+	padding: 40px 80px
 	z-index: 300 !important
 	color: #fff
 
+
+
+
 	&__contacts
 		display: flex
+		align-items: center
 		flex-direction: column
 		align-items: flex-end
 
@@ -27,8 +123,11 @@ body.new
 		display: flex
 		flex-direction: column
 		align-items: flex-end
-		margin-top: 15px
+		margin-bottom: 33px
 		width: 105px !important
+
+
+
 
 	.fake.not-selectize
 		background-color: transparent
@@ -36,7 +135,6 @@ body.new
 		border: 0
 		position: absolute
 		padding-right: 20px
-
 
 
 
@@ -113,8 +211,11 @@ body.new
 			margin-left: 25px
 
 
+
 .h-menu
 	display: flex
+
+		
 	&__item
 
 		position: relative
@@ -151,8 +252,9 @@ body.new
 		color: currentColor
 		display: block
 		padding: 15px 0
-		color: inherit
-		
+
+		font-size: rem(16)
+
 
 
 
@@ -162,6 +264,7 @@ body.new
 		color: currentColor
 
 .head__contacts
+
 	.selectize-input
 		background-color: transparent !important
 		border: 0
@@ -179,6 +282,8 @@ body.new
 
 	&__contacts-phones
 		text-align: right
+
+
 	.selectize-control.single 
 		.selectize-input
 			cursor: pointer !important
@@ -212,6 +317,25 @@ body.new
 .head__burger
 	display: none
 
+@media screen and (max-width: 1800px)
+	body.new 
+		.head .h-menu__item:not(:first-child)
+			margin-left: 20px
+
+		.head--middle
+			max-width: 744px
+
+		.head .h-city .selectize-input
+			background-position: 0 0
+
+
+@media screen and (max-width: 1700px)
+	
+	body.new 
+		.head--middle
+			max-width: 685px
+
+
 @media screen and (max-width: 1600px)
 	
 	.head
@@ -226,6 +350,45 @@ body.new
 	.h-menu__item:not(:first-child)
 		margin-left: 40px
 
+	body.new 
+		.head
+			padding: 0 20px
+
+		.head__soc
+			margin-left: 25px
+
+
+
+@media screen and (max-width: 1500px)
+	
+	body.new
+		.head
+			padding-top: 40px
+
+			&__wrap
+				flex-wrap: wrap
+				max-width: 1200px
+
+		.head .h-menu__item:not(:first-child)
+			margin-left: 20px
+
+		.head--middle
+			max-width: 100%
+			width: 100%
+			order: 3
+			margin-top: 50px
+
+		.head__contacts-phones address:not(:first-child)
+			margin-left: 10px
+			padding-left: 10px
+
+		.logo img:not(:first-child)
+			margin-left: 15px
+
+		.head__soc
+			margin-left: 20px
+
+
 
 @media screen and (max-width: 1400px)
 	
@@ -237,13 +400,21 @@ body.new
 	.h-menu__item:not(:first-child)
 		margin-left: 20px
 
+	body.new .head
+		padding: 27px 20px
+
 @media screen and (max-width: 1200px)
 
-	.head__menu, .head__btn, .head__contacts, .head__soc
-		display: none
+	.head__menu, .head__contacts, .head__soc, .head--middle, .head__wrap--bot
+		display: none !important
 
-	.head__btn .btn
-		color: var(--main-color)
+	.mobile-menu 
+		.head__btn .btn
+			color: var(--main-color) !important
+
+	.new
+		.head__btn .btn
+			color: #fff
 
 	.fake.not-selectize
 		position: absolute
@@ -296,6 +467,13 @@ body.new
 		.option
 			padding: 5px 0
 
+		.btn.desktop
+			display: none !important
+		.btn.mobile
+			&:hover
+				background-color: #fff !important
+				color: var(--main-color) !important
+
 
 	.burger
 		position: relative
@@ -325,6 +503,7 @@ body.new
 			vertical-align: bottom
 			background: #fff
 			transition: background .2s .4s
+
 			&:before
 				border-radius: 5px
 				transform: none
@@ -337,6 +516,7 @@ body.new
 				background: #fff
 				transform-origin: 50% 50%
 				transition: top .3s .3s,transform .3s
+
 			&:after
 				border-radius: 5px
 				content: ""
@@ -364,13 +544,46 @@ body.new
 			top: 0
 			transition: top .3s,transform .3s .5s
 
+	body.new
+		.burger 
+			span
+				background-color: #000
+
+				&:after, &:before
+					background-color: #000
+
+		&.js__menu--open
+
+			.burger>span
+				background: 0 0
+
+
 
 @media screen and (max-width: 1000px)
 
 	.head.js__scrolled
 		padding: 15px
+
+
+	body.new .head__btn .btn
+		padding: 15px
 	
 @media screen and (max-width: 660px)
+
+	body.new
+		.head--right
+			flex: 1 1 auto
+
+			.head__btn
+				margin: 0 auto
+
+	.btn
+		&.desktop
+			display: none
+
+		&.mobile
+			display: block
+			margin: 0 auto
 
 	.head
 		padding: 20px
@@ -390,4 +603,35 @@ body.new
 
 		img:not(:first-child)
 			margin: 0 0 0 15px
+
+	body.new
+		.logo
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+
+			img
+				max-width: 80px
+
+				&:not(:first-child)
+					margin: 10px 0 0 0
+
+		.head__wrap
+			flex-wrap: nowrap
+			align-items: center
+
+		.head
+			padding: 10px 20px
+
+
+
+@media screen and (max-width: 370px)
+	
+	body.new 
+		.head__btn .btn
+			padding: 11px
+
+		.head--right
+			padding-left: 10px
+
 

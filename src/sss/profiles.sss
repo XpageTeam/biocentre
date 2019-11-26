@@ -1,0 +1,141 @@
+.profiles
+
+	&-title
+		font-size: rem(36)
+		font-weight: bold
+		margin-bottom: 60px
+
+	&__img
+		margin-bottom: 35px
+
+		img
+			border-radius: 10px
+
+	&__title
+		font-size: rem(20)
+		font-weight: 600
+		margin-bottom: 20px
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		.more
+			font-size: rem(14)
+			font-weight: 400
+
+
+	&__footer
+		border-radius: 10px
+		background-color: var(--main-color)
+		margin-top: 30px
+		padding: 35px 45px
+		color: #fff
+		display: flex
+		align-items: center
+
+		&-info
+			margin-right: auto
+
+		&-bot
+			font-size: rem(20)
+			font-weight: 600
+			margin-top: 5px
+
+		.btn
+			color: #000
+
+
+	.tabs
+		display: flex
+		justify-content: space-between
+
+		&__left
+			max-width: 500px
+			width: 100%
+			margin-right: 30px
+
+		&-tab
+			padding: 23px 45px 22px 20px
+			border-radius: 10px
+			transition: padding .3s ease, background .3s ease, color .3s ease, transform .3s ease
+			cursor: pointer
+			transform: translate3d(-20px,0,0)
+			background-image: url('../img/ico-arrow.svg')
+			background-repeat: no-repeat
+			background-position: right 23px center
+			width: 100%
+
+			&.active
+				background-color: var(--main-color)
+				color: #fff
+				transform: translate3d(0,0,0)
+
+
+		&-content
+			max-width: 590px
+			width: 100%
+
+			&:not(.active)
+				position: absolute
+				pointer-events: none
+				display: none
+
+
+@media (max-width: 1000px)
+	
+	.profiles 
+		.tabs
+			justify-content: space-between
+
+		.tabs-content
+			width: 100%
+			max-width: 390px
+
+		&__footer
+			flex-direction: column
+			padding: 25px 20px
+
+			&-btn
+				margin-top: 20px
+
+
+@media (max-width: 667px)
+	
+	.profiles
+
+		&__title
+			flex-direction: column
+			align-items: flex-start
+			
+			.more
+				margin-top: 20px
+
+		.tabs
+			flex-direction: column
+
+		.tabs
+			&__left
+				display: flex
+				overflow-x: auto
+				padding-bottom: 20px
+				margin: 0 -20px 20px
+				padding-left: 20px
+				width: auto
+				-webkit-overflow-scrolling: touch
+
+				&:after
+					content: ''
+					display: block
+					width: 1px
+					height: 20px
+					flex: none
+
+
+			&-tab
+				flex: none
+				margin-right: 20px
+				padding: 10px
+				width: auto
+				transform: none
+				border: 1px solid var(--main-color)
+				background-image: none !important

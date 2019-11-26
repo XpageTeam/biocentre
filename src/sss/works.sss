@@ -1,0 +1,91 @@
+.work
+	&-cont
+		padding: 95px 0 80px
+
+	&__title
+		font-size: rem(36)
+		font-weight: bold
+		margin-bottom: 85px
+
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 0 0 -75px -30px
+
+	&__item
+		width: calc((100% - 30px * 2) / 2)
+		margin: 0 0 75px 30px
+
+		display: flex
+
+		&-img
+			size: 83px
+			border-radius: 50%
+			background-color: var(--main-color)
+			flex: none
+			margin-right: 55px
+			display: flex
+			justify-content: center
+			align-items: center
+
+		&-title
+			font-weight: 600
+			font-size: rem(20)
+			margin-bottom: 25px
+
+		&-text
+			max-width: 370px
+			font-size: rem(15)
+			line-height: 26px
+
+			.fancybox
+				padding: 0
+				background-color: transparent !important
+
+				&:hover
+					color: var(--main-color) !important
+
+			.profil
+				color: var(--main-color)
+				cursor: pointer
+
+	&-info
+		margin-top: 90px
+		text-align: center
+		font-size: rem(12)
+
+@media (max-width: 1500px)
+	
+	.work
+		&-cont
+			padding: 60px 0
+
+		&__title
+			margin-bottom: 60px
+
+@media (max-width: 1000px)
+	
+	.work
+		&-cont
+			padding: 40px 0
+
+		&__item
+			&-img
+				margin-right: 20px
+
+			&-title
+				margin-bottom: 15px
+
+		&__title
+			margin-bottom: 35px
+
+		&-info
+			margin-top: 40px
+
+@media (max-width: 667px)
+	
+	.work__item
+		width: 100%
+
+	.work__title, .profiles-title
+		font-size: 1.4rem
