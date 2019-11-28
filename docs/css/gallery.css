@@ -1,0 +1,2 @@
+.gallery{margin:70px 0}.gallery__list{display:flex;flex-wrap:wrap;margin:0 0 -30px -30px}.gallery__item{width:calc((100% - 90px)/3);margin:0 0 30px 30px}.gallery__item img{display:block;width:100%;border-radius:5px}
+/*# sourceMappingURL=gallery.css.map */

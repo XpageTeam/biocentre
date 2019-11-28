@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Типовая страница
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.new.loading
+		include inc/header.pug
+		main#content
+			.inner-content__title-cont
+				.wrapper
+					.inner-content__title
+						.title-block
+							.title-block__crumbs
+								.bread-crumbs
+									a.bread-crumbs__link(href="#") Биоцентр
+									span.bread-crumbs__this В Москве открылись два новых фирменных магазина
+							.title-block__title
+								h1 В Москве открылись два новых фирменных магазина
+			.content
+				.inner-content
+							
+					.inner-content__content
+
+						.wrapper
+							.standart-page
+								.standart-page__text
+									<!-- по классу .text-page применяются контентные стили -->
+									.text-page
+										
+										
+										h3 Дополнительная колонка может быть снабжена заголовками
+										p Многострочный заголовок, длина которого иногда бывает так некстати Типовые элементы оформляются в системе администрирования через визуальный редактор «Реформатор». Чтобы контент-менеджеру было легче в них ориентироваться, их количество лучше свести к необходимому минимуму.
+										
+							.gallery
+								.gallery__list
+									- for (let i = 1; i < 9; i++) 
+										- for (let i = 1; i < 3; i++) 
+											.gallery__item
+												a(href="img/photos/news-"+i+".jpg").fancybox
+													img(src="img/photos/news-"+i+".jpg", alt="")
+									
+		include inc/footer.pug
+		include inc/scripts.pug
