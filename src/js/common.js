@@ -124,6 +124,35 @@ document.addEventListener("DOMContentLoaded", e => {
 
 	});
 
+
+	let swiperPartners = new Swiper(".partners .swiper-list", {
+		slidesPerView: 6,
+		loop: true,
+		a11y: false,
+		// spaceBetween: 50,
+		roundLengths: true,
+		autoplay: {
+			delay: 3000,
+		},
+		breakpoints: {
+		    1200: {
+		      slidesPerView: 4,
+		      // spaceBetween: 20,
+		    },
+		    1000: {
+		      slidesPerView: 3,
+		    },
+		    660: {
+		      slidesPerView: 2,
+		    }
+		},
+		navigation: {
+	        nextEl: '.partners .slick-next',
+	        prevEl: '.partners .slick-prev',
+	    },
+
+	});
+
 	let swiperMainSlider = new Swiper(".main-slider", {
 		effect: "fade",
 		slidesPerView: 1,

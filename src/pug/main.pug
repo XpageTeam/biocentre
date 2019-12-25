@@ -607,6 +607,19 @@ html(lang="ru")
 										.testemonials__item-btn
 											.testemonials-btn Развернуть
 											.testemonials-data 05.03.2019
+
+				.partners-cont
+					.wrapper
+						.partners
+							.testemonials-slider__arrow
+								.slick-prev.slick-arrow
+								.slick-next.slick-arrow
+							.swiper-list
+								.swiper-wrapper
+									- for (let j = 1; j < 6; j++)
+										.swiper-slide
+											figure
+												img(src="img/p-"+j+".png", alt="")
 				.faq-cont#5
 					.wrapper
 						.faq
