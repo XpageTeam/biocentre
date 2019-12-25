@@ -33,6 +33,53 @@
 @import "gallery.sss"
 
 
+.wr-all-block
+	position: relative
+
+
+	#listService
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		width: 100% !important
+		z-index: 10
+		pointer-events: none
+
+		.wrapper
+			height: 100%
+
+		ul
+			background-color: #fff
+			padding: 30px
+			width: 300px
+			min-height: 100%
+			max-height: 100%
+			overflow-y: auto
+			overflow-x: hidden
+			pointer-events: auto
+
+
+			&::-webkit-scrollbar
+				width: 8px
+			
+
+			&::-webkit-scrollbar-track
+				background-color: var(--second-color)
+			
+
+			&::-webkit-scrollbar-thumb
+				background-color: var(--main-color)
+			
+
+		li
+			padding: 10px 0
+			cursor: pointer
+
+	.map
+		width: 100% !important
+
 .partners
 	position: relative
 
@@ -50,6 +97,7 @@
 	.swiper-wrapper
 		display: flex
 		align-items: center
+
 
 .form__confirm-phone
 	margin-top: 10px
@@ -333,7 +381,13 @@
 	.title 
 		font-size: 1.4rem
 
+	.wr-all-block #listService .wrapper
+		padding: 0
+
 @media screen and (max-width: 667px)
+
+	.wr-all-block #listService
+		position: static
 
 	.partners
 		.testemonials-slider__arrow
