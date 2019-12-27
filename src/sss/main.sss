@@ -33,6 +33,19 @@
 @import "gallery.sss"
 
 
+.partners
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 0 0 -30px -30px
+
+	&__item
+		width: calc((100% - 30px * 4) / 4)
+		margin: 0 0 30px 30px
+		display: flex
+		align-items: center
+		justify-content: center
+
 .wr-all-block
 	position: relative
 
@@ -83,20 +96,12 @@
 .partners
 	position: relative
 
-	figure
-		padding: 0 30px
+
 
 	&-cont
 		padding: 50px 0
 		background-color: #fff
 
-	.swiper-list
-		overflow: hidden
-
-
-	.swiper-wrapper
-		display: flex
-		align-items: center
 
 
 .form__confirm-phone
@@ -390,14 +395,27 @@ body:not(.js__menu--open)
 	.wr-all-block #listService .wrapper
 		padding: 0
 
+	.partners
+		&__list
+			margin: 0 0 -20px -20px
+
+		&__item
+			width: calc((100% - 20px * 3) / 3)
+			margin: 0 0 20px 20px
+
 @media screen and (max-width: 667px)
+
+	.partners
+		&__list
+			margin: 0 0 -15px -15px
+
+		&__item
+			width: calc((100% - 15px * 2) / 2)
+			margin: 0 0 15px 15px
 
 	.wr-all-block #listService
 		position: static
 
-	.partners
-		.testemonials-slider__arrow
-			display: none
 			
 	.wrapper 
 		padding: 0 20px
