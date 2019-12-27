@@ -5,6 +5,21 @@
 	.map
 		height: calc(100vh - 452px ) !important
 
+.contacts__nav-item.item-filter
+	display: flex
+	margin-left: 20px
+	z-index: 100
+
+	.selectize-control
+		display: flex
+		align-items: center
+
+	.selectize-input
+		padding-right: 40px
+		box-shadow: none
+
+		input
+			display: none !important
 
 
 .contacts
@@ -138,8 +153,49 @@ ymaps[class*="-cluster"]
 		&__btn
 			margin-top: 15px
 
+@media screen and (min-width: 660px)
+	.wr-all-block #listService
+		select
+			display: none
+
+		li.active
+			border-bottom: 1px solid var(--main-color)
+
 @media screen and (max-width: 660px)
 
+	.contacts__nav-item.item-filter
+		margin-left: 0
+
+		select
+			width: 100%
+			height: 45px
+			padding: 0 20px
+			padding-right: 30px
+			border: 1px solid var(--border-color)
+			background-image: url("../img/ico-select-arrow-black.svg") 
+			background-position: right 10px center
+			background-repeat: no-repeat
+
+
+	.wr-all-block #listService ul
+		display: none
+
+	.wr-all-block
+		flex-direction: column
+
+		#listService
+			pointer-events: all !important
+
+			select
+				margin: 0 20px 30px
+				height: 45px
+				padding: 0 20px
+				padding-right: 30px
+				border: 1px solid var(--border-color)
+				background-image: url("../img/ico-select-arrow-black.svg") 
+				background-position: right 10px center
+				background-repeat: no-repeat
+				width: calc(100% - 40px)
 
 
 	.contacts__nav

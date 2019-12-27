@@ -398,7 +398,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
 	
 
-	//if (!is.touchDevice()){
+	if (!is.touchDevice()){
 		window.selectizeOpen = false;
 
 		$("select:not(.not-selectize)").selectize({
@@ -415,7 +415,7 @@ document.addEventListener("DOMContentLoaded", e => {
 					window.fullpage.setAllowScrolling(true)
 			}
 		})
-	//}
+	}
 
 	$(".fancybox").fancybox({
 		animationEffect: false,
