@@ -113,15 +113,27 @@
 	.forms__input
 		background-color: #fff
 		height: 45px
-		padding: 0 160px 0 25px
-		border: 1px solid #f8f8f8
+		padding: 0 130px 0 25px
+		border: 1px solid var(--main-color)
+
+		&::-webkit-input-placeholder
+			opacity: 1
+
+		&:-moz-placeholder
+			opacity: 1
+
+		&::-moz-placeholder
+			opacity: 1
+
+		&:-ms-input-placeholder
+			opacity: 1
 
 	.btn-phone-confirm
 		position: absolute
 		bottom: 0
 		right: 0
 		height: 45px
-		padding: 10px 20px
+		padding: 10px
 		border-radius: 0
 
 .page-packages
@@ -468,4 +480,16 @@ body:not(.js__menu--open)
 		width: 100%
 		border-radius: 0
 
+
+@media screen and (max-width: 370px)
+
+	.form__confirm-phone
+
+		.forms__input
+			padding: 0 25px
+
+		.btn-phone-confirm
+			position: static
+			margin-top: 10px
+			width: 100%
 
