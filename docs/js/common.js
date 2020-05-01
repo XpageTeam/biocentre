@@ -20494,12 +20494,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	var swiperMainSlider = new _swiper2.default(".main-slider", {
 		effect: "fade",
 		slidesPerView: 1,
-		loop: true,
+		loop: false,
 		a11y: false,
 		roundLengths: true,
-		autoplay: {
-			delay: 3000
-		},
+		autoplay: true,
 		navigation: {
 			nextEl: '.main-slider .swiper-button-next',
 			prevEl: '.main-slider .swiper-button-prev'

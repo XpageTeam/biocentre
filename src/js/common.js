@@ -156,19 +156,17 @@ document.addEventListener("DOMContentLoaded", e => {
 	let swiperMainSlider = new Swiper(".main-slider", {
 		effect: "fade",
 		slidesPerView: 1,
-		loop: true,
+		loop: false,
 		a11y: false,
 		roundLengths: true,
-		autoplay: {
-			delay: 3000,
-		},
-		 navigation: {
+		autoplay: true,
+		navigation: {
 	        nextEl: '.main-slider .swiper-button-next',
 	        prevEl: '.main-slider .swiper-button-prev',
-	      },
-	     fadeEffect: {
+	    },
+	    fadeEffect: {
 		    crossFade: true
-		  },
+		},
 
 
 	});
